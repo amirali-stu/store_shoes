@@ -5,22 +5,100 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Fonts */
+
+.font-sans-regular {
+  font-family: var(--font-sana-regular);
+}
+.font-sans-medium {
+  font-family: var(--font-sana-medium);
+}
+.font-sans-bold {
+  font-family: var(--font-sana-bold);
+}
+.font-sans-demibold {
+  font-family: var(--font-sana-demibold);
+}
+.font-yekan-medium {
+  font-family: var(--font-yekan-medium);
+}
+.font-yekan-bold {
+  font-family: var(--font-yekan-bold);
+}
+.font-yekan-regular {
+  font-family: var(--font-yekan-regular);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Fonts */
+
+@theme inline {
+  --color-success: #00b207;
+  --color-success-bright: #84d187;
+  --color-success-dark: #2c742f;
+  --color-warning: #ff8a00;
+  --color-error: #ea4b48;
+
+  /* green custom (start) */
+  --color-green-50: #edf2ee;
+  --color-green-100: #dae5da;
+  --color-green-200: #b4ccb4;
+  --color-green-300: #96b297;
+  --color-green-400: #7a997c;
+  --color-green-500: #618062;
+  --color-green-600: #406b42;
+  --color-green-700: #2b572e;
+  --color-green-800: #173b1a;
+  --color-green-900: #002603;
+  /* green custom (done) */
+
+  /* gray custom (start) */
+  --color-gray-50: #f2f2f2;
+  --color-gray-100: #e5e5e5;
+  --color-gray-200: #cccccc;
+  --color-gray-300: #b3b3b3;
+  --color-gray-400: #999999;
+  --color-gray-500: #808080;
+  --color-gray-600: #666666;
+  --color-gray-700: #4d4d4d;
+  --color-gray-800: #333333;
+  --color-gray-900: #1a1a1a;
+  /* gray custom (done) */
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.swiper {
+  width: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.mySwiper .swiper-button-prev::after,
+.mySwiper .swiper-button-prev::before {
+  font-size: 26px !important;
+  color: #000000 !important;
+  font-weight: 1000;
+}
+.banner-slider .swiper-button-prev::after,
+.banner-slider .swiper-button-prev::before {
+  font-size: 14px !important;
+  color: #000000 !important;
+  font-weight: 1000;
 }
