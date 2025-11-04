@@ -7,7 +7,7 @@ function TopHeader() {
   const [isUSD, setIsUSD] = useState(false);
 
   return (
-    <div className="container flex items-center justify-between border-b-2 border-gray-100 !py-2 !px-[200px]">
+    <div className="w-full flex items-center justify-between border-b-2 border-gray-100 !py-2 lg:!px-[250px] max-lg:!px-[80px] max-sm:!px-[40px]">
       <div>
         <p className="text-gray-600 font-sans-medium">
           {/* Store Location: Lincoln- 344, Illinois, Chicago, USA */}
@@ -16,7 +16,7 @@ function TopHeader() {
       </div>
 
       <div className="flex items-center gap-x-5 font-sans-medium">
-        <div className="relative">
+        <div className="relative max-md:hidden">
           <button
             id="dropdownHoverButton"
             data-dropdown-toggle="dropdownHover"
@@ -62,7 +62,7 @@ function TopHeader() {
           </div>
         </div>
 
-        <div className="relative">
+        <div className="relative max-md:hidden">
           <button
             id="dropdownHoverButton"
             data-dropdown-toggle="dropdownHover"
@@ -107,7 +107,7 @@ function TopHeader() {
             </ul>
           </div>
         </div>
-        <span className="bg-gray-200 w-0.5 h-6"></span>
+        <span className="bg-gray-200 w-0.5 h-6 max-md:hidden"></span>
         <p className="text-gray-600">ثبت نام / ورود </p>
       </div>
     </div>

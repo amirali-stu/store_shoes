@@ -4,7 +4,7 @@ import { IoIosArrowDown } from "react-icons/io";
 
 function BottomHeader() {
   return (
-    <div className="container w-full h-[56px] bg-gray-50 flex items-center justify-between font-sans-medium !px-[200px]">
+    <div className="w-full max-md:hidden h-[56px] bg-gray-50 flex items-center justify-between font-sans-medium lg:!px-[200px] max-lg:!px-[100px]">
       <div>
         <ul className="flex items-center gap-x-4">
           <li>
@@ -17,7 +17,7 @@ function BottomHeader() {
               <IoIosArrowDown size={20} />
 
               {/* منوی بازشونده */}
-              <ul className="absolute w-40 right-5 flex flex-col gap-y-4 bg-white shadow-xl rounded-lg p-2 opacity-0 top-0 transition-all delay-75 duration-300 group-hover:opacity-100 group-hover:top-6 pointer-events-none group-hover:pointer-events-auto">
+              <ul className="absolute w-40 right-5 flex flex-col gap-y-4 bg-white shadow-xl rounded-lg p-2 opacity-0 top-0 transition-all delay-75 duration-300 group-hover:opacity-100 group-hover:top-6 pointer-events-none group-hover:pointer-events-auto z-10">
                 <li>
                   <a href="#">لینک اول</a>
                 </li>
@@ -36,7 +36,7 @@ function BottomHeader() {
               <span>وبلاگ</span>
               <IoIosArrowDown size={20} />
 
-              <ul className="absolute w-40 right-5 flex flex-col gap-y-4 bg-white shadow-xl rounded-lg p-2 opacity-0 top-0 transition-all delay-75 duration-300 group-hover:opacity-100 group-hover:top-6 pointer-events-none group-hover:pointer-events-auto">
+              <ul className="absolute w-40 right-5 flex flex-col gap-y-4 bg-white shadow-xl rounded-lg p-2 opacity-0 top-0 transition-all delay-75 duration-300 group-hover:opacity-100 group-hover:top-6 pointer-events-none group-hover:pointer-events-auto z-10">
                 <li>
                   <a href="#">لینک اول</a>
                 </li>

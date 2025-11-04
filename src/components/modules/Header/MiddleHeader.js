@@ -4,10 +4,10 @@ import { IoIosSearch, IoMdHeartEmpty } from "react-icons/io";
 
 function MiddleHeader() {
   return (
-    <div className="container w-full flex items-center justify-between font-sans-medium !py-5 !px-[200px]">
-      <h3 className="text-4xl">کفش تک</h3>
+    <div className="container-custom w-full flex items-center justify-between font-sans-medium !py-5 lg:!px-[200px] max-lg:!px-[80px] max-sm:!px-[40px]" >
+      <h3 className="lg:text-4xl max-lg:text-2xl">کفش تک</h3>
 
-      <div className="w-[400px] h-[50px] rounded-md flex items-center border-2 border-gray-100 pr-4 overflow-hidden">
+      <div className="w-[400px] hidden xl:inline-flex h-[50px] rounded-md items-center border-2 border-gray-100 pr-4 overflow-hidden">
         <IoIosSearch size={28} />
         <input
           className="w-full h-full placeholder:text-gray-500 pr-2 outline-0 text-gray-600"

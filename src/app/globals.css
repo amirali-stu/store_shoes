@@ -5,6 +5,8 @@
   --foreground: #171717;
 }
 
+
+
 /* Fonts */
 
 .font-sans-regular {
@@ -32,6 +34,10 @@
 /* Fonts */
 
 @theme inline {
+  --container-padding: 20px;
+  --container-padding-md: 40px;
+  --container-padding-lg: 80px;
+
   --color-success: #00b207;
   --color-success-bright: #84d187;
   --color-success-dark: #2c742f;
@@ -70,11 +76,17 @@ body {
   color: var(--foreground);
 }
 
-.container {
-  padding-left: 80px;
-  padding-right: 80px;
-  padding-top: 0px;
-  padding-bottom: 0px;
+.container-custom {
+  @apply w-full mx-auto max-w-[1580px];
+  padding-inline: var(--container-padding);
+
+  @media (min-width: 768px) {
+    padding-inline: var(--container-padding-md);
+  }
+
+  @media (min-width: 1024px) {
+    padding-inline: var(--container-padding-lg);
+  }
 }
 
 .swiper {
@@ -89,7 +101,6 @@ body {
   align-items: center;
 }
 
-
 .mySwiper .swiper-button-prev::after,
 .mySwiper .swiper-button-prev::before {
   font-size: 26px !important;
@@ -101,4 +112,9 @@ body {
   font-size: 14px !important;
   color: #000000 !important;
   font-weight: 1000;
+}
+
+#product-banner {
+  background-image: url(../../public/images/products/banner.png);
+  background-position: center;
 }

@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import Navbar from "@/components/modules/Header/navbar/Navbar";
 import "./globals.css";
+import "./slider.css";
 
 const SanaRegular = localFont({
   src: "../../public/fonts/Sans-Regular.ttf",
@@ -39,7 +40,7 @@ export default function RootLayout({ children }) {
       className={`${SanaRegular.variable} ${SanaMedium.variable} ${SanaBold.variable} ${SanaDemiBold.variable} ${YekanMedium.variable} ${YekanBold.variable} ${YekanRegular.variable}`}
     >
       <body>
-        <header>
+        <header className="w-full flex items-center flex-col">
           <Navbar />
         </header>
 

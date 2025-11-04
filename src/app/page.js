@@ -1,16 +1,22 @@
-import Banner from "@/components/templates/slider/Banner";
 import car from "../svgs/delivery-truck.svg";
 import headephone from "../svgs/headphones.svg";
 import packageBox from "../svgs/package.svg";
 import shoppingBag from "../svgs/shopping-bag.svg";
 import Image from "next/image";
+import ProductBox from "@/components/modules/Products/ProductBox";
+import ProductRow from "@/components/modules/Products/ProductRow";
+import { IoArrowForward } from "react-icons/io5";
+import Box from "@/components/templates/Category/Box";
+import Banner from "@/components/templates/slider/Banner";
 
 export default function Home() {
   return (
-    <div className=" flex min-h-screen items-center flex-col">
-      <div className="container relative">
+    <div className="flex items-center flex-col">
+      {/* Slider Banner */}
+      <div className="container-custom relative mt-8">
         <Banner />
-        <div className="w-[80%] h-[128px] absolute -bottom-[10%] left-1/2 -translate-x-1/2 bg-white font-sans-medium shadow-md rounded-xl z-10 p-10 flex items-center gap-x-8">
+
+        <div className="xl:w-[80%] xl:h-[128px] w-full max-xl:mt-8 max-xl:border-2 max-xl:border-gray-50 xl:absolute xl:-bottom-[10%] xl:left-1/2 xl:-translate-x-1/2 bg-white font-sans-medium shadow-md rounded-xl z-10 xl:p-10 max-xl:p-3 xl:flex xl:items-center xl:gap-x-8 max-xl:grid max-xl:grid-cols-2 max-sm:grid-cols-1 max-xl:gap-8">
           <div className="flex-1">
             <div className="flex items-center gap-x-4">
               <Image src={car} alt="لوگو" width={40} height={40} priority />
@@ -74,6 +80,121 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="container-custom md:mt-40 max-md:mt-10">
+        <h2 className="text-3xl text-gray-900 text-center font-sans-demibold relative">
+          محصولات برتر
+          <div className="flex justify-center mt-2 gap-x-1">
+            <span className="block w-3 h-1 bg-success/30"></span>
+            <span className="block w-6 h-1 bg-success"></span>
+            <span className="block w-3 h-1 bg-success/30"></span>
+          </div>
+        </h2>
+
+        <div className="grid grid-cols-1 mt-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 justify-items-center">
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+        </div>
+
+        <div className="flex items-center xl:gap-x-6 lg:gap-x-2 max-lg:gap-x-4 mt-10 max-sm:flex-col lg:justify-center ">
+          <div className="max-sm:w-full max-sm:my-2 max-lg:flex-1">
+            <div className="flex items-center justify-between w-full mb-4">
+              <h2 className="text-lg text-gray-900 font-sans-demibold relative">
+                محصولات کم فروش
+              </h2>
+              <a
+                href="#"
+                className="text-blue-500 sm:hidden transition-all duration-300 hover:text-blue-600 hover:underline"
+              >
+                موارد بیشتر
+              </a>
+            </div>
+
+            <div className="w-full flex flex-col gap-y-2">
+              <ProductRow />
+              <ProductRow />
+              <ProductRow />
+              <ProductRow />
+            </div>
+          </div>
+
+          <div className="max-2xl:hidden lg:block max-lg:hidden">
+            <h2 className="text-lg  text-gray-900 font-sans-demibold relative mb-4">
+              محصولات پر فروش
+            </h2>
+
+            <div className="flex flex-col gap-y-2">
+              <ProductRow />
+              <ProductRow />
+              <ProductRow />
+              <ProductRow />
+            </div>
+          </div>
+
+          <div className="max-sm:w-full max-sm:my-2 max-lg:flex-1">
+            <div className="flex items-center justify-between w-full mb-4">
+              <h2 className="text-lg text-gray-900 font-sans-demibold relative">
+                محصولات کم فروش
+              </h2>
+              <a
+                href="#"
+                className="text-blue-500 sm:hidden transition-all duration-300 hover:text-blue-600 hover:underline"
+              >
+                موارد بیشتر
+              </a>
+            </div>
+
+            <div className="flex flex-col gap-y-2">
+              <ProductRow />
+              <ProductRow />
+              <ProductRow />
+              <ProductRow />
+            </div>
+          </div>
+
+          {/* offer banner */}
+          <div
+            id="product-banner"
+            className="w-[312px] max-xl:hidden h-[426px] mt-10 font-sans-medium flex items-center flex-col pt-10"
+          >
+            <h4 className="text-xl text-center text-gray-900">
+              تخفیف بزرگ تابستانه
+            </h4>
+            <span className="text-red-600 text-4xl font-sans-demibold my-2">
+              % 75 تخفیف
+            </span>
+            <button className="flex items-center justify-center gap-x-2 bg-white rounded-full w-[162px] h-[45px] shadow-[0_0_10px_-2px_##0000001E] cursor-pointer transition-all duration-300 hover:shadow-[0_0_10px_-2px_#0000001E] hover:ml-4 text-success text-xl group">
+              <IoArrowForward
+                size={20}
+                className="transition-all duration-300 group-hover:animate-pulse"
+              />
+              <span>خرید</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div className="container-custom md:mt-30 max-md:mt-10">
+        <h2 className="text-3xl text-gray-900 text-center font-sans-demibold relative">
+          دسته بندی های اصلی 💫
+          <div className="flex justify-center mt-2 gap-x-1">
+            <span className="block w-3 h-1 bg-success/30"></span>
+            <span className="block w-6 h-1 bg-success"></span>
+            <span className="block w-3 h-1 bg-success/30"></span>
+          </div>
+        </h2>
+
+        <div className="grid grid-cols-1 mt-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 justify-items-center">
+          <Box count={152} title={"دمپایی"} />
+          <Box count={354} title={"کتونی"} />
+          <Box count={21} title={"کفش"} />
+          <Box count={984} title={"صندل"} />
+          <Box count={21} title={"اسکیچرز"} />
         </div>
       </div>
 
