@@ -4,7 +4,7 @@ import { IoIosArrowDown } from "react-icons/io";
 
 function BottomHeader() {
   return (
-    <div className="w-full max-md:hidden h-[56px] bg-gray-50 flex items-center justify-between font-sans-medium lg:!px-[200px] max-lg:!px-[100px]">
+    <div className="w-full max-md:hidden h-[56px] bg-gray-800 **:text-gray-200 flex items-center justify-between font-sans-medium lg:!px-[200px] max-lg:!px-[100px] ">
       <div>
         <ul className="flex items-center gap-x-4">
           <li>

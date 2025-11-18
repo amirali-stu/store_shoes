@@ -2,6 +2,9 @@ import localFont from "next/font/local";
 import Navbar from "@/components/modules/Header/navbar/Navbar";
 import "./globals.css";
 import "./slider.css";
+import Footer from "@/components/modules/Footer/Footer";
+import GoUp from "@/components/modules/MoveUp/GoUp";
+import Breadcrumb from "@/components/modules/Breadcrumb/Breadcrumb";
 
 const SanaRegular = localFont({
   src: "../../public/fonts/Sans-Regular.ttf",
@@ -44,7 +47,16 @@ export default function RootLayout({ children }) {
           <Navbar />
         </header>
 
-        <main>{children}</main>
+        <Breadcrumb />
+
+        <main>
+          {children}
+          <GoUp />
+        </main>
+
+        <footer className="w-full">
+          <Footer />
+        </footer>
       </body>
     </html>
   );

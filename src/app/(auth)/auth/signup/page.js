@@ -1,0 +1,77 @@
+"use client";
+
+import { useState } from "react";
+import { MdOutlineRemoveRedEye } from "react-icons/md";
+import { LuEyeClosed } from "react-icons/lu";
+import Link from "next/link";
+
+function Signup() {
+  const [showPassword, setShowPassword] = useState(false);
+  const [showPasswordConfirm, setShowPasswordConfirm] = useState(false);
+
+  return (
+    <div className="w-full font-sans-medium flex items-center justify-center">
+      <div className="w-[520px] h-[410px] p-6 bg-white rounded-lg border-2 border-gray-100 shadow-lg">
+        <h1 className="text-center text-2xl font-sans-demibold mb-3 text-gray-900">
+          ثبت نام
+        </h1>
+        <form className="flex items-center flex-col gap-y-3.5">
+          <input
+            type="email"
+            placeholder="ایمل"
+            className="w-full border-2 border-gray-100 rounded-md pr-2.5  py-3.5 placeholder:text-gray-400 text-gray-600 outline-0 transition-all duration-300 focus:ring-2 ring-blue-600"
+          />
+          <div className="relative w-full">
+            <input
+              type={showPassword ? "text" : "password"}
+              placeholder="رمز عبور"
+              className="w-full border-2 border-gray-100 rounded-md pr-2.5 py-3.5 
+               placeholder:text-gray-400 text-gray-600 outline-0 transition-all duration-300 focus:ring-2 ring-blue-600"
+            />
+
+            <span
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute left-3 top-1/2 -translate-y-1/2 cursor-pointer text-gray-500"
+            >
+              {showPassword ? (
+                <LuEyeClosed size={22} />
+              ) : (
+                <MdOutlineRemoveRedEye size={22} />
+              )}
+            </span>
+          </div>
+          <div className="relative w-full">
+            <input
+              type={showPasswordConfirm ? "text" : "password"}
+              placeholder="تکرار رمز عبور"
+              className="w-full border-2 border-gray-100 rounded-md pr-2.5 py-3.5 
+               placeholder:text-gray-400 text-gray-600 outline-0 transition-all duration-300 focus:ring-2 ring-blue-600"
+            />
+
+            <span
+              onClick={() => setShowPasswordConfirm(!showPasswordConfirm)}
+              className="absolute left-3 top-1/2 -translate-y-1/2 cursor-pointer text-gray-500"
+            >
+              {showPasswordConfirm ? (
+                <LuEyeClosed size={22} />
+              ) : (
+                <MdOutlineRemoveRedEye size={22} />
+              )}
+            </span>
+          </div>
+          <button className="w-full rounded-full text-xl bg-success text-white flex items-center justify-center text-center py-3 cursor-pointer transition-all duration-300 hover:bg-success/80">
+            ثبت نام
+          </button>
+        </form>
+        <p className="block text-center mt-5 text-gray-600">
+          آیا اکانت دارید؟{" "}
+          <Link href={"./login"} className="text-gray-900 font-sans-bold">
+            وارد شوید
+          </Link>
+        </p>
+      </div>
+    </div>
+  );
+}
+
+export default Signup;

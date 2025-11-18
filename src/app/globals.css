@@ -5,12 +5,11 @@
   --foreground: #171717;
 }
 
-
-
 /* Fonts */
 
 .font-sans-regular {
   font-family: var(--font-sana-regular);
+  /* position: static; */
 }
 .font-sans-medium {
   font-family: var(--font-sana-medium);
@@ -34,7 +33,7 @@
 /* Fonts */
 
 @theme inline {
-  --container-padding: 20px;
+  --container-padding: 10px;
   --container-padding-md: 40px;
   --container-padding-lg: 80px;
 

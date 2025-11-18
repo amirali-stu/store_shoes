@@ -7,11 +7,13 @@ import ProductBox from "@/components/modules/Products/ProductBox";
 import ProductRow from "@/components/modules/Products/ProductRow";
 import { IoArrowForward } from "react-icons/io5";
 import Box from "@/components/templates/Category/Box";
-import Banner from "@/components/templates/slider/Banner";
+import Banner from "@/components/templates/Slider/Banner";
+import Comment from "@/components/templates/Slider/Comment";
+import Article from "@/components/modules/Blog/Article";
 
 export default function Home() {
   return (
-    <div className="flex items-center flex-col">
+    <div className="flex items-center flex-col ">
       {/* Slider Banner */}
       <div className="container-custom relative mt-8">
         <Banner />
@@ -84,7 +86,7 @@ export default function Home() {
       </div>
 
       <div className="container-custom md:mt-40 max-md:mt-10">
-        <h2 className="text-3xl text-gray-900 text-center font-sans-demibold relative">
+        <h2 className="text-3xl max-md:text-2xl text-gray-900 text-center font-sans-demibold relative">
           محصولات برتر
           <div className="flex justify-center mt-2 gap-x-1">
             <span className="block w-3 h-1 bg-success/30"></span>
@@ -180,7 +182,7 @@ export default function Home() {
       </div>
 
       <div className="container-custom md:mt-30 max-md:mt-10">
-        <h2 className="text-3xl text-gray-900 text-center font-sans-demibold relative">
+        <h2 className="text-3xl max-md:text-2xl text-gray-900 text-center font-sans-demibold relative">
           دسته بندی های اصلی 💫
           <div className="flex justify-center mt-2 gap-x-1">
             <span className="block w-3 h-1 bg-success/30"></span>
@@ -198,27 +200,80 @@ export default function Home() {
         </div>
       </div>
 
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+      <div className="container-custom md:mt-40 max-md:mt-10">
+        <div className="flex items-center justify-between">
+          <h2 className="text-3xl max-md:text-2xl text-gray-900 text-right font-sans-demibold relative">
+            جدیدترین محصولات
+            <div className="flex mt-2 gap-x-1">
+              <span className="block w-3 h-1 bg-success/30"></span>
+              <span className="block w-6 h-1 bg-success"></span>
+              <span className="block w-3 h-1 bg-success/30"></span>
+            </div>
+          </h2>
 
-      <h1 className="text-2xl font-sans-medium">سلام . این یک متن تستی است</h1>
+          <a
+            href="#"
+            className="font-sans-medium text-success flex items-center hover:underline gap-x-1"
+          >
+            نتایج بیشتر
+            <span>
+              <IoArrowForward className="rotate-180" />
+            </span>
+          </a>
+        </div>
 
-      <div className="font-yekan-regular text-2xl">
-        این یک متن تستی با فونت یکان است
+        <div className="grid grid-cols-1 mt-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 justify-items-center">
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+          <ProductBox />
+        </div>
+      </div>
+
+      <div className="container-custom bg-gray-50 md:mt-20 md:py-10 max-md:py-5 max-md:mt-10 w-full">
+        <div className="flex items-center justify-between">
+          <h2 className="text-3xl max-md:text-2xl text-gray-900 text-right font-sans-demibold relative">
+            کامنت های برتر
+            <div className="flex mt-2 gap-x-1">
+              <span className="block w-3 h-1 bg-success/30"></span>
+              <span className="block w-6 h-1 bg-success"></span>
+              <span className="block w-3 h-1 bg-success/30"></span>
+            </div>
+          </h2>
+
+          <a
+            href="#"
+            className="font-sans-medium text-success flex items-center hover:underline gap-x-1"
+          >
+            نتایج بیشتر
+            <span>
+              <IoArrowForward className="rotate-180" />
+            </span>
+          </a>
+        </div>
+
+        <div className="mt-14 max-md:mt-10">
+          <Comment />
+        </div>
+      </div>
+
+      <div className="container-custom md:mt-30 md:mb-20 max-md:mb-10 max-md:mt-10">
+        <h2 className="text-3xl max-md:text-2xl text-gray-900 text-center font-sans-demibold relative">
+          وبلاگ های مارا دنبال کنید...
+          <div className="flex justify-center mt-2 gap-x-1">
+            <span className="block w-3 h-1 bg-success/30"></span>
+            <span className="block w-6 h-1 bg-success"></span>
+            <span className="block w-3 h-1 bg-success/30"></span>
+          </div>
+        </h2>
+
+        <div className="grid grid-cols-1 mt-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-4 justify-items-center">
+          <Article />
+          <Article />
+          <Article />
+          <Article />
+        </div>
       </div>
     </div>
   );

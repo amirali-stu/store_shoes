@@ -46,3 +46,45 @@
   opacity: 0.9;
   transform: scale(1.1);
 }
+
+.custom-pagination-comment {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+  gap: 1px !important;
+  pointer-events: none;
+}
+
+.custom-pagination-comment .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #ccc;
+  border-radius: 50%;
+  opacity: 0.7;
+  cursor: pointer;
+  pointer-events: auto;
+
+  /* انیمیشن نرم برای همه تغییرات */
+  transition: width 0.4s ease, height 0.4s ease, background-color 0.4s ease,
+    border-radius 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+
+  /* حالت اولیه */
+  transform: scale(1);
+}
+
+.custom-pagination-comment .swiper-pagination-bullet-active {
+  width: 20px;
+  background: #00b207;
+  border-radius: 12px;
+  opacity: 1;
+
+  /* حالت فعال با scale نرم */
+  transform: scale(1.05);
+}
+
+/* اختیاری: hover effect */
+.custom-pagination-comment .swiper-pagination-bullet:hover {
+  opacity: 0.9;
+  transform: scale(1.1);
+}

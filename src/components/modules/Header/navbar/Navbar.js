@@ -7,9 +7,7 @@ function Navbar() {
   return (
     <>
       <TopHeader />
-
       <MiddleHeader />
-
       <BottomHeader />
     </>
   );
