@@ -14,7 +14,7 @@ import Article from "@/components/modules/Blog/Article";
 export default function Home() {
   return (
     <div className="flex items-center flex-col ">
-      {/* Slider Banner */}
+      {/* بنر اسلایدر تبلیغاتی */}
       <div className="container-custom relative mt-8">
         <Banner />
 
@@ -85,6 +85,7 @@ export default function Home() {
         </div>
       </div>
 
+      {/* محصولات برتر  */}
       <div className="container-custom md:mt-40 max-md:mt-10">
         <h2 className="text-3xl max-md:text-2xl text-gray-900 text-center font-sans-demibold relative">
           محصولات برتر
@@ -95,7 +96,7 @@ export default function Home() {
           </div>
         </h2>
 
-        <div className="grid grid-cols-1 mt-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 justify-items-center">
+        <div className="flex flex-wrap justify-center gap-3 mt-4">
           <ProductBox />
           <ProductBox />
           <ProductBox />
@@ -103,6 +104,7 @@ export default function Home() {
           <ProductBox />
         </div>
 
+        {/* پیشنهاد محصولات براساس قیمت */}
         <div className="flex items-center xl:gap-x-6 lg:gap-x-2 max-lg:gap-x-4 mt-10 max-sm:flex-col lg:justify-center ">
           <div className="max-sm:w-full max-sm:my-2 max-lg:flex-1">
             <div className="flex items-center justify-between w-full mb-4">
@@ -111,9 +113,12 @@ export default function Home() {
               </h2>
               <a
                 href="#"
-                className="text-blue-500 sm:hidden transition-all duration-300 hover:text-blue-600 hover:underline"
+                className="font-sans-medium text-success flex items-center hover:underline gap-x-1"
               >
-                موارد بیشتر
+                نتایج بیشتر
+                <span>
+                  <IoArrowForward className="rotate-180" />
+                </span>
               </a>
             </div>
 
@@ -145,9 +150,12 @@ export default function Home() {
               </h2>
               <a
                 href="#"
-                className="text-blue-500 sm:hidden transition-all duration-300 hover:text-blue-600 hover:underline"
+                className="font-sans-medium text-success flex items-center hover:underline gap-x-1"
               >
-                موارد بیشتر
+                نتایج بیشتر
+                <span>
+                  <IoArrowForward className="rotate-180" />
+                </span>
               </a>
             </div>
 
@@ -181,6 +189,7 @@ export default function Home() {
         </div>
       </div>
 
+      {/* دسته بندی محصولات */}
       <div className="container-custom md:mt-30 max-md:mt-10">
         <h2 className="text-3xl max-md:text-2xl text-gray-900 text-center font-sans-demibold relative">
           دسته بندی های اصلی 💫
@@ -191,7 +200,7 @@ export default function Home() {
           </div>
         </h2>
 
-        <div className="grid grid-cols-1 mt-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4 justify-items-center">
+        <div className="flex flex-wrap gap-1 mt-5 md:justify-between max-md:justify-between gap-y-2">
           <Box count={152} title={"دمپایی"} />
           <Box count={354} title={"کتونی"} />
           <Box count={21} title={"کفش"} />
@@ -200,6 +209,7 @@ export default function Home() {
         </div>
       </div>
 
+      {/* جدیدترین محصولات */}
       <div className="container-custom md:mt-40 max-md:mt-10">
         <div className="flex items-center justify-between">
           <h2 className="text-3xl max-md:text-2xl text-gray-900 text-right font-sans-demibold relative">
@@ -222,15 +232,16 @@ export default function Home() {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 mt-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6 justify-items-center">
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
-          <ProductBox />
+        <div className="flex flex-wrap justify-center gap-3 mt-4">
+          <ProductBox className="max-w-[422px] w-full" />
+          <ProductBox className="max-w-[422px] w-full" />
+          <ProductBox className="max-w-[422px] w-full" />
+          <ProductBox className="max-w-[422px] w-full" />
+          <ProductBox className="max-w-[422px] w-full" />
         </div>
       </div>
 
+      {/* کامنت های برتر */}
       <div className="container-custom bg-gray-50 md:mt-20 md:py-10 max-md:py-5 max-md:mt-10 w-full">
         <div className="flex items-center justify-between">
           <h2 className="text-3xl max-md:text-2xl text-gray-900 text-right font-sans-demibold relative">
@@ -258,6 +269,7 @@ export default function Home() {
         </div>
       </div>
 
+      {/* وبلاگ */}
       <div className="container-custom md:mt-30 md:mb-20 max-md:mb-10 max-md:mt-10">
         <h2 className="text-3xl max-md:text-2xl text-gray-900 text-center font-sans-demibold relative">
           وبلاگ های مارا دنبال کنید...

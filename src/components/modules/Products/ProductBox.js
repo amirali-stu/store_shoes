@@ -7,12 +7,12 @@ import { IoMdHeartEmpty } from "react-icons/io";
 
 function ProductBox() {
   return (
-    <div className="sm:w-[248px] max-sm:w-full flex items-center flex-col border-2 border-gray-100 rounded-lg group transition-all duration-400 hover:border-success-dark/50 hover:shadow-[0_0_10px_-2px_#2c742f] relative overflow-hidden">
+    <div className="w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[19%] flex items-center flex-col border-2 border-gray-100 rounded-lg group transition-all duration-400 hover:shadow-[0_0_10px_-2px_#999999] hover:border-gray-400/70 lg:hover:-translate-y-1 relative overflow-hidden">
       <div className="relative h-full w-full">
         <Image
           src="/images/products/Image.png"
           alt="Product image"
-          className="object-contain sm:w-[246px] md:h-[246px] h-[150px] max-sm:w-full"
+          className="object-contain max-lg:w-full sm:h-[200px] md:h-[246px] max-sm:h-[239px]"
           width={246}
           height={246}
         />
@@ -34,10 +34,10 @@ function ProductBox() {
         </div>
       </div>
       {/* hidden box */}
-      <div className="max-sm:hidden absolute bg-white border-2 border-gray-50 flex items-center justify-center p-1 rounded-full w-9 h-9 top-5 right-70 transition-all duration-300 group-hover:right-50 group-hover:z-10 -z-20 cursor-pointer">
+      <div className="max-lg:hidden absolute bg-white border-2 border-gray-50 flex items-center justify-center p-1 rounded-full w-9 h-9 top-5 right-70 transition-all duration-300 group-hover:right-50 group-hover:z-10 -z-20 cursor-pointer">
         <IoMdHeartEmpty size={28} />
       </div>
-      <div className="max-sm:hidden absolute bg-white border-2 border-gray-50 flex items-center justify-center p-1 rounded-full w-9 h-9 top-15 right-70 transition-all duration-300 delay-100 group-hover:right-50 group-hover:z-10 -z-20 cursor-pointer">
+      <div className="max-lg:hidden absolute bg-white border-2 border-gray-50 flex items-center justify-center p-1 rounded-full w-9 h-9 top-15 right-70 transition-all duration-300 delay-100 group-hover:right-50 group-hover:z-10 -z-20 cursor-pointer">
         <MdOutlineRemoveRedEye size={28} />
       </div>
     </div>

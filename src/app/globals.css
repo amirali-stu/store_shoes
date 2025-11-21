@@ -33,9 +33,9 @@
 /* Fonts */
 
 @theme inline {
-  --container-padding: 10px;
+  --container-padding: 15px;
   --container-padding-md: 40px;
-  --container-padding-lg: 80px;
+  --container-padding-lg: 40px;
 
   --color-success: #00b207;
   --color-success-bright: #84d187;
