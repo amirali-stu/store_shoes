@@ -96,7 +96,7 @@ export default function Home() {
           </div>
         </h2>
 
-        <div className="flex flex-wrap justify-center gap-3 mt-4">
+        <div className="flex flex-wrap w-full md:justify-center gap-3 mt-4">
           <ProductBox />
           <ProductBox />
           <ProductBox />

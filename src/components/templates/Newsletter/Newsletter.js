@@ -1,8 +1,8 @@
 export default function Newsletter() {
   return (
-    <div className="md:px-20 max-md:px-4 font-sans-medium bg-gray-50 md:py-[50px] max-sm:py-5 max-sm:flex-col flex items-center justify-between">
-      <div className="flex max-sm:gap-y-4 gap-x-20 max-sm:flex-col">
-        <h3 className="text-4xl text-gray-900">خبرنامه</h3>
+    <div className="lg:px-20 md:px-4 max-md:px-4 font-sans-medium bg-gray-50 md:py-[50px] max-md:py-5 max-sm:py-5 max-md:flex-col flex  items-center justify-between max-md:gap-y-5 max-lg:gap-x-2">
+      <div className="flex max-sm:gap-y-4 max-md:w-full max-md:justify-between gap-x-20 max-sm:flex-col">
+        <h3 className="text-4xl lg:w-auto max-lg:w-9 text-gray-900">خبرنامه</h3>
 
         <div className="flex flex-col gap-y-2">
           <h4 className="text-gray-900 text-xl">خبرنامه مارا دنبال کنید</h4>

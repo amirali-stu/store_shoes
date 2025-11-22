@@ -7,7 +7,7 @@ import { IoMdHeartEmpty } from "react-icons/io";
 
 function ProductBox() {
   return (
-    <div className="w-full sm:w-[48%] md:w-[48%] lg:w-[23%] xl:w-[19%] flex items-center flex-col border-2 border-gray-100 rounded-lg group transition-all duration-400 hover:shadow-[0_0_10px_-2px_#999999] hover:border-gray-400/70 lg:hover:-translate-y-1 relative overflow-hidden">
+    <div className="w-full md:w-auto flex items-center flex-col border-2 border-gray-100 rounded-lg group transition-all duration-400 hover:shadow-[0_0_10px_-2px_#999999] hover:border-gray-400/70 lg:hover:-translate-y-1 relative overflow-hidden">
       <div className="relative h-full w-full">
         <Image
           src="/images/products/Image.png"
