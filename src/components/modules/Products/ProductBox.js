@@ -4,6 +4,7 @@ import { FaStar } from "react-icons/fa";
 import { BsBasket } from "react-icons/bs";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { IoMdHeartEmpty } from "react-icons/io";
+import Link from "next/link";
 
 function ProductBox() {
   return (
@@ -44,9 +45,12 @@ function ProductBox() {
       <div className="max-lg:hidden absolute bg-white border-2 border-gray-50 flex items-center justify-center p-1 rounded-full w-9 h-9 top-5 right-70 transition-all duration-300 group-hover:right-50 group-hover:z-10 -z-20 cursor-pointer">
         <IoMdHeartEmpty size={28} />
       </div>
-      <div className="max-lg:hidden absolute bg-white border-2 border-gray-50 flex items-center justify-center p-1 rounded-full w-9 h-9 top-15 right-70 transition-all duration-300 delay-100 group-hover:right-50 group-hover:z-10 -z-20 cursor-pointer">
+      <Link
+        href={"./product/1"}
+        className="max-lg:hidden absolute bg-white border-2 border-gray-50 flex items-center justify-center p-1 rounded-full w-9 h-9 top-15 right-70 transition-all duration-300 delay-100 group-hover:right-50 group-hover:z-10 -z-20 cursor-pointer"
+      >
         <MdOutlineRemoveRedEye size={28} />
-      </div>
+      </Link>
     </div>
   );
 }
