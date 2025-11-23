@@ -1,4 +1,4 @@
-import ProductBox from "@/components/modules/Products/ProductBox";
+import ProductContainer from "@/components/modules/Products/ProductContainer";
 import ProductFilterBox from "@/components/templates/Filter/ProductFilterBox";
 
 export default function Products() {
@@ -7,15 +7,8 @@ export default function Products() {
       <div className="lg:w-[400px] max-lg:w-full">
         <ProductFilterBox />
       </div>
-      <div className="w-full grid xl:grid-cols-4 sm:grid-cols-3 gap-3 py-6">
-        <ProductBox />
-        <ProductBox />
-        <ProductBox />
-        <ProductBox />
-        <ProductBox />
-        <ProductBox />
-        <ProductBox />
-      </div>
+
+      <ProductContainer />
     </div>
   );
 }

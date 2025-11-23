@@ -17,6 +17,7 @@ function Breadcrumb() {
     signup: "ثبت‌نام",
     logout: "خروج",
     faqs: "سوالات متداول",
+    products: "محصولات",
   };
 
   const breadcrumbs = segments.map((seg) => mapTitle[seg] || seg);

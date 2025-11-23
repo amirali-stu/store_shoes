@@ -11,7 +11,7 @@ export default function Accordion({ title, children }) {
     <div>
       <button
         type="button"
-        className="flex font-sans-medium items-center justify-between w-full py-5 font-medium gap-3 cursor-pointer border-b-2 border-gray-200 last:[&:last-child]:border-b-0"
+        className="flex font-sans-medium items-center justify-between w-full py-4 font-medium gap-3 cursor-pointer border-b-2 border-gray-100/70"
         onClick={() => setIsOpen(!isOpen)}
       >
         <span className="font-sans-bold text-xl">{title}</span>

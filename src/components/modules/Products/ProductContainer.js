@@ -1,0 +1,36 @@
+import SelectBox from "@/components/templates/Filter/SelectBox";
+import ProductBox from "./ProductBox";
+
+export default function ProductContainer() {
+  return (
+    <div className="flex flex-col w-full mt-4 font-sans-medium">
+      <div className="w-full flex items-center justify-between">
+        <div className="flex items-center gap-x-2">
+          <label className="text-gray-500 text-nowrap" htmlFor="sortBy">
+            مرتب بندی :{" "}
+          </label>
+          <SelectBox />
+        </div>
+        <p className="text-gray-400 text-md max-md:text-sm">
+          <span className="text-gray-900">45</span> محصول پیدا شد
+        </p>
+      </div>
+      <div className="w-full grid xl:grid-cols-4 sm:grid-cols-3 gap-3 py-6">
+        <ProductBox />
+        <ProductBox />
+        <ProductBox />
+        <ProductBox />
+        <ProductBox />
+        <ProductBox />
+        <ProductBox />
+        <ProductBox />
+        <ProductBox />
+        <ProductBox />
+        <ProductBox />
+        <ProductBox />
+        <ProductBox />
+        <ProductBox />
+      </div>
+    </div>
+  );
+}
