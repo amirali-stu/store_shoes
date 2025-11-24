@@ -47,10 +47,10 @@ export default function ProductGallery({ images = [] }) {
           {images.map((src, index) => (
             <SwiperSlide key={index}>
               <div
-                className={`rounded-lg overflow-hidden cursor-pointer border-2 transition-all ${
+                className={`rounded-lg overflow-hidden cursor-pointer border-2 mx-1 transition-all ${
                   activeIndex === index
-                    ? "border-blue-500 shadow-md"
-                    : "border-gray-300 hover:border-gray-500"
+                    ? "border-gray-700 shadow-lg scale-105"
+                    : "border-gray-300 hover:border-gray-400"
                 }`}
               >
                 <Image
