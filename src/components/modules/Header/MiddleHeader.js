@@ -2,9 +2,7 @@ import React from "react";
 import { BsBasket } from "react-icons/bs";
 import { IoIosSearch, IoMdHeartEmpty } from "react-icons/io";
 
-function MiddleHeader() {
-
-  
+function MiddleHeader({ setIsOpenBasket }) {
   return (
     <div className="container-custom w-full flex items-center justify-between font-sans-medium bg-white !py-5 lg:!px-[200px] max-lg:!px-[80px] max-sm:!px-[40px]">
       <h3 className="lg:text-4xl max-lg:text-2xl">کفش تک</h3>
@@ -23,7 +21,7 @@ function MiddleHeader() {
       <div className="flex items-center gap-x-3">
         <IoMdHeartEmpty className="cursor-pointer" size={28} />
         <span className="bg-gray-200 w-[1.5px] h-8" />
-        <div className="relative">
+        <div className="relative" onClick={() => setIsOpenBasket(true)}>
           <BsBasket className="cursor-pointer" size={28} />
           <span className="absolute w-5.5 rounded-full text-sm -top-2.5 right-3 border-2 border-white bg-green-600 text-white text-center flex items-center justify-center">
             1
