@@ -18,6 +18,8 @@ function Breadcrumb() {
     logout: "خروج",
     faqs: "سوالات متداول",
     products: "محصولات",
+    shopping_cart: "سبد خرید",
+    wishlist: "علاقه مندی ها",
   };
 
   const breadcrumbs = segments.map((seg) => mapTitle[seg] || seg);
