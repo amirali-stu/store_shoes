@@ -36,9 +36,6 @@ const YekanRegular = localFont({
 });
 
 export default function RootLayout({ children }) {
-
-
-
   return (
     <html
       lang="fa"

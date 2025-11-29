@@ -8,12 +8,12 @@ import Link from "next/link";
 
 function ProductBox() {
   return (
-    <div className="w-full md:w-auto flex items-center flex-col border-2 border-gray-100 rounded-lg group transition-all duration-400 hover:shadow-[0_0_10px_-2px_#999999] hover:border-gray-400/70 lg:hover:-translate-y-1 relative overflow-hidden font-sans-medium">
+    <div className="min-w-[240px] md:w-auto flex items-center flex-col border-2 border-gray-100 rounded-lg group transition-all duration-400 hover:shadow-[0_0_10px_-2px_#999999] hover:border-gray-400/70 lg:hover:-translate-y-1 relative overflow-hidden font-sans-medium">
       <div className="relative h-full w-full">
         <Image
           src="/images/products/Image.png"
           alt="Product image"
-          className="object-contain max-lg:w-full sm:h-[200px] md:h-[246px] max-sm:h-[239px]"
+          className="object-contain max-lg:w-full sm:h-[200px] md:h-[246px] max-sm:h-[240px]"
           width={246}
           height={246}
         />
@@ -42,14 +42,15 @@ function ProductBox() {
         50% <span className="font-medium">تخفیف</span>
       </div>
       {/* hidden box */}
-      <div className="max-lg:hidden absolute bg-white border-2 border-gray-50 flex items-center justify-center p-1 rounded-full w-9 h-9 top-5 right-70 transition-all duration-300 group-hover:right-50 group-hover:z-10 -z-20 cursor-pointer">
-        <IoMdHeartEmpty size={28} />
-      </div>
-      <Link
-        href={"./product/1"}
-        className="max-lg:hidden absolute bg-white border-2 border-gray-50 flex items-center justify-center p-1 rounded-full w-9 h-9 top-15 right-70 transition-all duration-300 delay-100 group-hover:right-50 group-hover:z-10 -z-20 cursor-pointer"
-      >
-        <MdOutlineRemoveRedEye size={28} />
+      <Link href={"/wishlist"}>
+        <div className="max-lg:hidden absolute bg-white border-2 border-gray-50 flex items-center justify-center p-1 rounded-full w-9 h-9 top-5 right-70 transition-all duration-300 group-hover:right-50 group-hover:z-10 -z-20 cursor-pointer">
+          <IoMdHeartEmpty size={28} />
+        </div>
+      </Link>
+      <Link href={"/product/1"}>
+        <div className="max-lg:hidden absolute bg-white border-2 border-gray-50 flex items-center justify-center p-1 rounded-full w-9 h-9 top-15 right-70 transition-all duration-300 delay-100 group-hover:right-50 group-hover:z-10 -z-20 cursor-pointer">
+          <MdOutlineRemoveRedEye size={28} />
+        </div>
       </Link>
     </div>
   );

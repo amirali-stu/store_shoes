@@ -47,9 +47,11 @@ export default function BasketBox({ onCloseBasket }) {
           <p className="text-gray-900">2 محصول</p>
           <p className="text-gray-900 font-bold">$26.00</p>
         </div>
-        <button className="w-full text-lg bg-success text-white p-2 rounded-full cursor-pointer transition-all duration-300 hover:bg-success-dark">
+        <Link href={"/shopping_cart"}>
+          <button className="w-full text-lg bg-success text-white p-2 rounded-full cursor-pointer transition-all duration-300 hover:bg-success-dark">
           پرداخت
         </button>
+        </Link>
       </div>
     </div>
   );

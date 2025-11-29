@@ -97,7 +97,7 @@ export default function Home() {
             </div>
           </h2>
 
-          <div className="flex flex-wrap w-full md:justify-center gap-3 mt-4">
+          <div className="flex flex-wrap justify-center w-full md:justify-center gap-3 mt-4">
             <ProductBox />
             <ProductBox />
             <ProductBox />
@@ -234,11 +234,11 @@ export default function Home() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-3 mt-4">
-            <ProductBox className="max-w-[422px] w-full" />
-            <ProductBox className="max-w-[422px] w-full" />
-            <ProductBox className="max-w-[422px] w-full" />
-            <ProductBox className="max-w-[422px] w-full" />
-            <ProductBox className="max-w-[422px] w-full" />
+            <ProductBox />
+            <ProductBox />
+            <ProductBox />
+            <ProductBox />
+            <ProductBox />
           </div>
         </div>
 

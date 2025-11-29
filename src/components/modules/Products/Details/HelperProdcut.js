@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import CommentContainer from "./Comments/CommentContainer";
 
 export default function HelperProduct() {
   const tabs = [
@@ -14,8 +15,8 @@ export default function HelperProduct() {
   const contents = {
     1: "این بخش نحوه استفاده از محصول را توضیح می‌دهد...",
     2: "ویدیوها و آموزش‌های گام به گام در این قسمت قرار دارد.",
-    3: "مشخصات فنی، جنس، وزن، ابعاد و گارانتی محصول.",
-    4: "بیش از ۲۳۰ نفر نظر دادن. میانگین امتیاز: ۴.۸ از ۵",
+    3: "مطالب مفید",
+    4: <CommentContainer />,
     5: "سوالات پرتکرار کاربران درباره این محصول.",
   };
 
@@ -80,7 +81,7 @@ export default function HelperProduct() {
       </div>
 
       {/* محتوای تب */}
-      <div className="mt-8 p-8 bg-white rounded-2xl shadow-xl border border-gray-100">
+      <div className="mt-8 p-8 max-md:px-4 bg-white rounded-2xl shadow-xl border border-gray-100">
         <div className="text-gray-700 leading-9 text-lg">
           {contents[activeTab]}
         </div>

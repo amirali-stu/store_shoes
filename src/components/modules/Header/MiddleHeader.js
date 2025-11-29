@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { BsBasket } from "react-icons/bs";
 import { IoIosSearch, IoMdHeartEmpty } from "react-icons/io";
@@ -19,7 +20,9 @@ function MiddleHeader({ setIsOpenBasket }) {
       </div>
 
       <div className="flex items-center gap-x-3">
-        <IoMdHeartEmpty className="cursor-pointer" size={28} />
+        <Link href={"/wishlist"}>
+          <IoMdHeartEmpty className="cursor-pointer" size={28} />
+        </Link>
         <span className="bg-gray-200 w-[1.5px] h-8" />
         <div className="relative" onClick={() => setIsOpenBasket(true)}>
           <BsBasket className="cursor-pointer" size={28} />
