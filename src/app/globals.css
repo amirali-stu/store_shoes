@@ -117,3 +117,12 @@ body {
   background-image: url(../../public/images/products/banner.png);
   background-position: center;
 }
+
+/* موبایل = شیشه‌ای */
+.glassmorphism-custom {
+  background: rgba(160, 160, 160, 0.4) !important;
+  backdrop-filter: blur(50px) !important;
+  -webkit-backdrop-filter: blur(50px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+

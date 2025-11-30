@@ -1,5 +1,18 @@
+import AddressInfo from "@/components/templates/Account/Setting/AddressInfo";
+import UserInfo from "@/components/templates/Account/Setting/UserInfo";
+
 function Setting() {
-  return <div>Setting</div>;
+  return (
+    <div className="w-full grid gap-6">
+      <div className="w-full col-span-12">
+        <UserInfo />
+      </div>
+      <div className="w-full col-span-12">
+        <AddressInfo />
+      </div>
+      <div></div>
+    </div>
+  );
 }
 
 export default Setting;

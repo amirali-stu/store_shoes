@@ -19,7 +19,10 @@ function Breadcrumb() {
     faqs: "سوالات متداول",
     products: "محصولات",
     shopping_cart: "سبد خرید",
-    wishlist: "علاقه مندی ها",
+    account: "حساب",
+    dashboard: "پنل کاربری",
+    setting: "تنظیمات",
+    "order-history": "تاریخچه سفارشات",
   };
 
   const breadcrumbs = segments.map((seg) => mapTitle[seg] || seg);

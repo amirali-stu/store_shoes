@@ -1,11 +1,9 @@
-import React from "react";
+import Navigation from "@/components/templates/Account/Navigation";
 
 export default function RootLayoutUserDashboard({ children }) {
   return (
-    <div className="flex items-center justify-center gap-x-4">
-      <div className="w-[400px] h-[400px] p-4 bg-gray-50 border-2 border-gray-100 rounded-lg">
-        hello world
-      </div>
+    <div className="flex relative items-start justify-center max-md:flex-col max-md:gap-y-4 gap-x-4 max-w-7xl mx-auto font-sans-medium px-4 py-4">
+      <Navigation />
       {children}
     </div>
   );
