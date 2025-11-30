@@ -4,10 +4,12 @@ import React from "react";
 function UserInfo() {
   return (
     <div className="border-2 border-gray-100 rounded-lg px-5">
-      <h2 className="py-4 border-b-2 border-b-gray-100 text-xl">مشخصات فردی</h2>
-      <div className="p-5">
-        <form className="w-full flex items-start justify-between">
-          <div className="flex-1 flex flex-col gap-y-4">
+      <h2 className="py-4 border-b-2 border-b-gray-100 text-xl font-sans-bold">
+        مشخصات فردی
+      </h2>
+      <div className="p-5 max-md:p-2">
+        <form className="w-full flex max-md:flex-col-reverse max-md:items-center max-md:gap-y-6 items-start justify-between">
+          <div className="flex-1 max-md:w-full flex flex-col gap-y-4">
             <div className="w-full flex flex-col gap-y-2">
               <label htmlFor="first_name" className="text-gray-900">
                 نام
@@ -30,17 +32,17 @@ function UserInfo() {
                 placeholder="مثال: محمدی"
               />
             </div>
-            <button className="text-white bg-success border-2 transition-all duration-300 p-2 w-40 rounded-full cursor-pointer hover:bg-white hover:border-success hover:text-success">
+            <button className="text-white bg-success border-2 transition-all duration-300 p-2 md:w-40 rounded-full cursor-pointer hover:bg-white hover:border-success hover:text-success">
               ذخیره تغییرات
             </button>
           </div>
-          <div className="flex-1 flex items-center justify-center flex-col gap-y-4  ">
+          <div className="flex-1 max-md:w-full flex items-center justify-center flex-col gap-y-4  ">
             <Image
               src={"/images/products/image.png"}
               alt="edit profile"
               width={224}
               height={224}
-              className="rounded-full"
+              className="rounded-full max-lg:w-40 max-lg:h-40" 
             />
             <label
               htmlFor="upload"

@@ -1,4 +1,5 @@
 import AddressInfo from "@/components/templates/Account/Setting/AddressInfo";
+import ChangePassword from "@/components/templates/Account/Setting/ChangePassword";
 import UserInfo from "@/components/templates/Account/Setting/UserInfo";
 
 function Setting() {
@@ -10,7 +11,9 @@ function Setting() {
       <div className="w-full col-span-12">
         <AddressInfo />
       </div>
-      <div></div>
+      <div className="w-full col-span-12">
+        <ChangePassword />
+      </div>
     </div>
   );
 }
