@@ -4,7 +4,7 @@ import { useState } from "react";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { LuEyeClosed } from "react-icons/lu";
 import Link from "next/link";
-import { Slide, toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import { errorStyle, successStyle } from "@/app/ToastStyles";
 import { useRouter } from "next/navigation";
 
@@ -31,10 +31,7 @@ function Login() {
         body: JSON.stringify({ email, password }),
       });
 
-      const data = await res.json();
       if (res.status === 404) {
-        // setEmail("");
-        // setPassword("");
         return toast.error("کاربری با این اطلاعات یافت نشد", errorStyle);
       }
       if (res.status === 200) {
@@ -45,7 +42,6 @@ function Login() {
         }, 2000);
         toast.success("ورود با موفقیت انجام شد", successStyle);
       }
-      console.log(data);
     } catch (error) {
       console.log(error);
       return toast.error("خطایی رخ داد لطفا دوباره امتحان کنید", errorStyle);
@@ -118,20 +114,6 @@ function Login() {
             ثبت نام
           </Link>
         </p>
-
-        <ToastContainer
-          position="top-left"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick={false}
-          rtl
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="light"
-          transition={Slide}
-        />
       </div>
     </div>
   );

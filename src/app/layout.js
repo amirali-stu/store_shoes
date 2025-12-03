@@ -5,6 +5,7 @@ import "./slider.css";
 import Footer from "@/components/modules/Footer/Footer";
 import GoUp from "@/components/modules/MoveUp/GoUp";
 import Breadcrumb from "@/components/modules/Breadcrumb/Breadcrumb";
+import { Slide, ToastContainer } from "react-toastify";
 
 const SanaRegular = localFont({
   src: "../../public/fonts/Sans-Regular.ttf",
@@ -57,6 +58,20 @@ export default function RootLayout({ children }) {
         <footer className="w-full">
           <Footer />
         </footer>
+
+        <ToastContainer
+          position="top-left"
+          autoClose={4000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick={false}
+          rtl
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+          transition={Slide}
+        />
       </body>
     </html>
   );
