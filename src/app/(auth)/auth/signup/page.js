@@ -7,6 +7,7 @@ import Link from "next/link";
 import { errorStyle, successStyle } from "@/app/ToastStyles";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
+import { apiRequest } from "../../../../../services/axios/config/apiRequest";
 
 function Signup() {
   const router = useRouter();
@@ -30,10 +31,9 @@ function Signup() {
         return toast.error("گذرواژه با تکرار آن مطابقت ندارد", errorStyle);
       }
 
-      const res = await fetch("http://localhost:3000/api/auth/signup", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
+      const res = await apiRequest.post("/auth/signup", {
+        email,
+        password,
       });
 
       if (res.status === 409) {

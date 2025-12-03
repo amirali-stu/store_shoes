@@ -29,7 +29,10 @@ export async function POST(req) {
 
     if (!getUserInfo) {
       return Response.json(
-        { error: "داده نامعتبر : هیچ کاربری با این اطلاعات پیدا نشد" },
+        {
+          code: "USER_NOT_FOUND",
+          error: "داده نامعتبر : هیچ کاربری با این اطلاعات پیدا نشد",
+        },
         { status: 404 }
       );
     }
@@ -41,7 +44,7 @@ export async function POST(req) {
 
     if (!isTrustPassword) {
       return Response.json(
-        { error: "ایمیل یا گذرواژه اشتباه است" },
+        { code: "WRONG_PASSWORD", error: "ایمیل یا گذرواژه اشتباه است" },
         { status: 404 }
       );
     }

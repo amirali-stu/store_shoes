@@ -7,6 +7,7 @@ import Link from "next/link";
 import { toast } from "react-toastify";
 import { errorStyle, successStyle } from "@/app/ToastStyles";
 import { useRouter } from "next/navigation";
+import { apiRequest } from "../../../../../services/axios/config/apiRequest";
 
 function Login() {
   const router = useRouter();
@@ -25,15 +26,11 @@ function Login() {
     }
 
     try {
-      const res = await fetch("http://localhost:3000/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
+      const res = await apiRequest.post("/auth/login", {
+        email,
+        password,
       });
 
-      if (res.status === 404) {
-        return toast.error("کاربری با این اطلاعات یافت نشد", errorStyle);
-      }
       if (res.status === 200) {
         setEmail("");
         setPassword("");
@@ -43,8 +40,14 @@ function Login() {
         toast.success("ورود با موفقیت انجام شد", successStyle);
       }
     } catch (error) {
-      console.log(error);
-      return toast.error("خطایی رخ داد لطفا دوباره امتحان کنید", errorStyle);
+      if (error.response.data.code === "USER_NOT_FOUND") {
+        return toast.error("کاربری با این اطلاعات یافت نشد", errorStyle);
+      } else if (error.response.data.code === "WRONG_PASSWORD") {
+        return toast.error("اطلاعات وارد شده اشتباه است", errorStyle);
+      } else {
+        console.log(error.response.data.code);
+        return toast.error("خطایی رخ داد لطفا دوباره امتحان کنید", errorStyle);
+      }
     }
   };
 
