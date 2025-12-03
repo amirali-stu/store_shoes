@@ -1,6 +1,7 @@
+import { cookies } from "next/headers";
 import connectToDb from "../../../../../database/db";
 import UserModel from "../../../../../schema/user";
-import { hashedPassword } from "../../../../../utils/userVlidate";
+import { createToken, hashedPassword } from "../../../../../utils/auth";
 import { signupValidation } from "../../../../../validation/signupValidation";
 
 export async function POST(req) {
@@ -51,6 +52,14 @@ export async function POST(req) {
 
     const userResponse = newUser.toObject();
     delete userResponse.password;
+
+    const tokenValue = createToken(email);
+    const cookieStore = await cookies();
+    cookieStore.set("token", tokenValue, {
+      httpOnly: true,
+      path: "/",
+      maxAge: 60 * 60 * 24,
+    });
 
     return Response.json(
       { message: "ثبت‌نام با موفقیت انجام شد", user: userResponse },

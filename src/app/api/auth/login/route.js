@@ -1,6 +1,7 @@
+import { cookies } from "next/headers";
 import connectToDb from "../../../../../database/db";
 import UserModel from "../../../../../schema/user";
-import { confirmPasswordHashed } from "../../../../../utils/userVlidate";
+import { confirmPasswordHashed, createToken } from "../../../../../utils/auth";
 import { loginValidation } from "../../../../../validation/loginValidation";
 
 export async function POST(req) {
@@ -45,8 +46,20 @@ export async function POST(req) {
       );
     }
 
+    const userResponse = getUserInfo.toObject();
+    delete userResponse.password;
+
+    const tokenValue = createToken(email);
+
+    const cookieStore = await cookies();
+    cookieStore.set("token", tokenValue, {
+      httpOnly: true,
+      path: "/",
+      maxAge: 60 * 60 * 24,
+    });
+
     return Response.json(
-      { message: "کاربر با موفقیت وارد حساب شد", user: result.data },
+      { message: "کاربر با موفقیت وارد حساب شد", user: userResponse },
       { status: 200 }
     );
   } catch (error) {
