@@ -6,6 +6,7 @@ import Footer from "@/components/modules/Footer/Footer";
 import GoUp from "@/components/modules/MoveUp/GoUp";
 import Breadcrumb from "@/components/modules/Breadcrumb/Breadcrumb";
 import { Slide, ToastContainer } from "react-toastify";
+import TopHeader from "@/components/modules/Header/TopHeader";
 
 const SanaRegular = localFont({
   src: "../../public/fonts/Sans-Regular.ttf",
@@ -45,6 +46,7 @@ export default function RootLayout({ children }) {
     >
       <body>
         <header className="w-full flex items-center flex-col">
+          <TopHeader />
           <Navbar />
         </header>
 

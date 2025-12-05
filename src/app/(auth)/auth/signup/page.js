@@ -45,6 +45,7 @@ function Signup() {
         setConfirmPassword("");
         setTimeout(() => {
           router.replace("/");
+          router.refresh();
         }, 2000);
         return toast.success("حساب کاربری با موفقیت ایجاد شد", successStyle);
       }

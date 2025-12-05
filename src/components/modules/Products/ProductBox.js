@@ -1,12 +1,49 @@
+"use client";
+
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { BsBasket } from "react-icons/bs";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { IoMdHeartEmpty } from "react-icons/io";
 import Link from "next/link";
+import { toast } from "react-toastify";
+import { errorStyle, successStyle } from "@/app/ToastStyles";
 
 function ProductBox() {
+  const addToLocalStorage = () => {
+    const productDetails = {
+      id: crypto.randomUUID(),
+      title: "ذرت",
+      count:1,
+      price: 14.99,
+      img: "/images/products/Image.png",
+    };
+
+    const existingBasket = JSON.parse(localStorage.getItem("basket") || "[]");
+
+    const isAlreadyInBasket = existingBasket.some(
+      (item) => item.id === productDetails.id
+    );
+
+    if (isAlreadyInBasket) {
+      return toast.error("محصول در سبد خرید شما وجود دارد", errorStyle);
+    }
+
+    const updatedBasket = [...existingBasket, productDetails];
+    localStorage.setItem("basket", JSON.stringify(updatedBasket));
+
+    // آپدیت در dom
+    window.dispatchEvent(new Event("basketUpdated"));
+    toast.success("محصول با موفقیت اضافه شد", successStyle);
+
+    // فرستادن کاربر به اول صفحه
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="min-w-[240px] md:w-auto flex items-center flex-col border-2 border-gray-100 rounded-lg group transition-all duration-400 hover:shadow-[0_0_10px_-2px_#999999] hover:border-gray-400/70 lg:hover:-translate-y-1 relative overflow-hidden font-sans-medium">
       <div className="relative h-full w-full">
@@ -30,7 +67,10 @@ function ProductBox() {
             <FaStar />
           </div>
         </div>
-        <div className="bg-gray-50 transition-all duration-400 group-hover:text-white group-hover:bg-success flex items-center justify-center rounded-full p-2 cursor-pointer">
+        <div
+          className="bg-gray-50 transition-all duration-400 group-hover:text-white group-hover:bg-success flex items-center justify-center rounded-full p-2 cursor-pointer"
+          onClick={addToLocalStorage}
+        >
           <BsBasket size={22} />
         </div>
       </div>

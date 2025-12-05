@@ -36,8 +36,10 @@ function Login() {
         setPassword("");
         setTimeout(() => {
           router.replace("/");
+          router.refresh();
         }, 2000);
         toast.success("ورود با موفقیت انجام شد", successStyle);
+        revalidatePath;
       }
     } catch (error) {
       if (error.response.data.code === "USER_NOT_FOUND") {

@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import TopHeader from "../TopHeader";
 import MiddleHeader from "../MiddleHeader";
 import BottomHeader from "../BottomHeader";
 import ContainerBox from "../../Basket/ContainerBox";
@@ -19,7 +18,6 @@ function Navbar() {
 
   return (
     <>
-      <TopHeader />
       <MiddleHeader setIsOpenBasket={setIsOpenBasket} />
       <BottomHeader />
 
