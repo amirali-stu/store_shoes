@@ -68,7 +68,11 @@ function CartTotal() {
           <p className="text-gray-900">${total}</p>
         </div>
       </div>
-      <Tippy content="سبد خرید خالی است" className="font-sans-regular">
+      <Tippy
+        content="سبد خرید خالی است"
+        disabled={basket.length >= 1 ? true : false}
+        className="font-sans-regular"
+      >
         <button
           className={`w-full mt-5 rounded-full text-center text-white py-3 ${
             basket.length >= 1

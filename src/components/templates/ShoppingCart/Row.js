@@ -81,7 +81,7 @@ function Row({
 
       <td className="pl-4 text-sm text-gray-600 whitespace-nowrap max-sm:pr-3">
         <div className="flex items-center justify-center">
-          <div className="p-1 max-lg:hidden border-2 max-sm:block border-gray-100 rounded-full cursor-pointer">
+          <div className="p-1 border-2 border-gray-100 rounded-full cursor-pointer">
             <IoClose
               className="text-lg text-gray-900"
               onClick={() => removeProductInBasket(id)}

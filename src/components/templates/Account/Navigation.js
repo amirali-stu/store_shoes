@@ -2,16 +2,30 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BiSolidDashboard } from "react-icons/bi";
 import { BsBasket } from "react-icons/bs";
 import { FaRegHeart } from "react-icons/fa";
 import { IoReload } from "react-icons/io5";
 import { IoMdSettings } from "react-icons/io";
 import { HiOutlineLogout } from "react-icons/hi";
+import { NavigationLoader } from "./NavigationLoader";
 
 function Navigation() {
   const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setMounted(true);
+    setIsLoading(false);
+  }, []);
+
+  if (isLoading) {
+    return <NavigationLoader />;
+  }
+
+  if (!mounted) return null;
 
   const items = [
     { href: "/account/dashboard", label: "داشبورد", icon: BiSolidDashboard },
@@ -33,15 +47,15 @@ function Navigation() {
   return (
     <div
       className="
-    w-[313px] md:h-[418px]
+    md:w-[313px] md:h-[418px]
     max-md:h-14 max-md:w-[95%]
     max-md:fixed max-md:bottom-0 max-md:left-1/2 max-md:-translate-x-1/2 
-    rounded-lg max-md:rounded-full md:sticky  md:top-2
+    rounded-lg max-md:rounded-full md:sticky md:top-2
     
     md:bg-white md:border-2 md:border-gray-100
     max-md:bg-gray-400/20 max-md:flex max-md:items-center max-md:justify-between max-md:border-2 max-md:border-gray-100
     max-md:backdrop-blur-lg
-    max-md:mb-4 z-50
+    max-md:mb-4 z-20
 "
     >
       <h2 className="text-gray-900 text-xl max-md:hidden p-4">دسترسی سریع</h2>
