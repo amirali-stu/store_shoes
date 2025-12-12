@@ -29,7 +29,7 @@ export default function RelatedProductSlider() {
         }}
         spaceBetween={5}
         loop={true}
-        slidesPerView={1}
+        slidesPerView={2}
         speed={500}
         breakpoints={{
           580: {
@@ -38,8 +38,8 @@ export default function RelatedProductSlider() {
           680: {
             slidesPerView: 3,
           },
-          880: {
-            slidesPerView: 3,
+          780: {
+            slidesPerView: 4,
           },
           980: {
             slidesPerView: 5,

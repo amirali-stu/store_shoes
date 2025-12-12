@@ -34,62 +34,57 @@ function Row({
   };
 
   return (
-    <tr className="hover:bg-gray-100/20 relative transition-all duration-300">
-      <td className="md:px-10 max-md:px-5 py-1 max-lg:py-8 flex items-center gap-x-2 text-sm text-gray-600 whitespace-nowrap">
+    <div className="bg-gray-50 flex h-34 items-center gap-x-4 p-3 rounded-xl relative transition-all duration-300">
+      <div className="w-34 h-full">
         <Image
           src={img}
-          className="lg:block hidden"
+          className="w-full h-full rounded-[15px_50px_30px] min-w-[100px] min-h-[100px]"
           width={100}
           height={100}
           alt="wishlist-list"
         />
-        <p className="text-base text-gray-900">{title}</p>
-      </td>
+      </div>
 
-      <td className="md:px-10 max-md:px-2 max-sm:px-4 py-1 text-sm text-gray-600 whitespace-nowrap">
-        <p className="text-xl max-md:text-base text-gray-900">
-          ${price}
-          <span className="line-through text-sm max-sm:text-xs text-gray-400 ml-2 max-sm:ml-1 font-normal">
-            $48,00
-          </span>
-        </p>
-      </td>
+      <div className="w-full h-full flex flex-col justify-between md:mr-10">
+        <div className="flex items-center gap-x-10">
+          <h2 className="md:text-xl text-lg">کتونی نایک ...</h2>
+        </div>
 
-      <td className="md:px-10 max-md:px-2 max-sm:px-4 py-1 whitespace-nowrap">
-        <div className="inline-flex p-2 border-2 border-gray-100 rounded-full items-center gap-x-3">
+        <div className="flex items-center gap-x-2">
+          <p className="text-xl max-md:text-base text-gray-900">
+            ${price}
+            <span className="line-through text-sm max-sm:text-xs text-gray-400 ml-2 max-sm:ml-1 font-normal">
+              $48,00
+            </span>
+          </p>
+        </div>
+
+        <div className="inline-flex rounded-full items-center md:gap-x-3 gap-x-2">
           <div
-            className="p-2.5 text-lg rounded-full cursor-pointer bg-gray-50 flex items-center justify-center text-gray-600 transition-all duration-300 hover:text-gray-900"
+            className="md:p-2 p-1.5 md:text-lg text-base rounded-full cursor-pointer bg-gray-50 flex items-center justify-center text-gray-600 transition-all duration-300 hover:text-gray-900"
             onClick={minesCounter}
           >
             <FaMinus />
           </div>
-          <p>{counter}</p>
+          <p className="text-xl">{counter}</p>
           <div
-            className="p-2.5 text-lg rounded-full cursor-pointer bg-gray-50 flex items-center justify-center text-gray-600 transition-all duration-300 hover:text-gray-900"
+            className="md:p-2 p-1.5 md:text-lg text-base rounded-full cursor-pointer bg-gray-50 flex items-center justify-center text-gray-600 transition-all duration-300 hover:text-gray-900"
             onClick={plusCounter}
           >
             <FaPlus />
           </div>
         </div>
-      </td>
+      </div>
 
-      <td className="md:px-10 max-md:px-2 max-sm:px-4 py-1 text-sm text-gray-600 whitespace-nowrap">
-        <p className="text-xl max-md:text-base text-gray-900">
-          ${price * counter}
-        </p>
-      </td>
-
-      <td className="pl-4 text-sm text-gray-600 whitespace-nowrap max-sm:pr-3">
-        <div className="flex items-center justify-center">
-          <div className="p-1 border-2 border-gray-100 rounded-full cursor-pointer">
-            <IoClose
-              className="text-lg text-gray-900"
-              onClick={() => removeProductInBasket(id)}
-            />
-          </div>
+      <div className="flex items-center justify-center">
+        <div className="p-1 border-2 border-gray-100 rounded-full cursor-pointer">
+          <IoClose
+            className="text-lg text-gray-900"
+            onClick={() => removeProductInBasket(id)}
+          />
         </div>
-      </td>
-    </tr>
+      </div>
+    </div>
   );
 }
 

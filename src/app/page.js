@@ -97,7 +97,8 @@ export default function Home() {
             </div>
           </h2>
 
-          <div className="flex flex-wrap justify-center w-full md:justify-center gap-3 mt-4">
+          <div className="grid justify-center xl:grid-cols-6 lg:grid-cols-5 sm:grid-cols-3 grid-cols-2 w-full md:justify-center mt-4 gap-3">
+            <ProductBox />
             <ProductBox />
             <ProductBox />
             <ProductBox />
@@ -233,7 +234,8 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-3 mt-4">
+          <div className="grid justify-center xl:grid-cols-6 lg:grid-cols-5 sm:grid-cols-3 grid-cols-2 w-full gap-3 mt-4">
+            <ProductBox />
             <ProductBox />
             <ProductBox />
             <ProductBox />
@@ -281,7 +283,7 @@ export default function Home() {
             </div>
           </h2>
 
-          <div className="grid grid-cols-1 mt-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 gap-4 justify-items-center">
+          <div className="grid justify-center lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-3 grid-cols-1 w-full mt-5 gap-4 justify-items-center">
             <Article />
             <Article />
             <Article />

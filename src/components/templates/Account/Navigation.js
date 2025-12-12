@@ -55,7 +55,8 @@ function Navigation() {
     md:bg-white md:border-2 md:border-gray-100
     max-md:bg-gray-400/20 max-md:flex max-md:items-center max-md:justify-between max-md:border-2 max-md:border-gray-100
     max-md:backdrop-blur-lg
-    max-md:mb-4 z-20
+    max-md:mb-4 z-2
+    0
 "
     >
       <h2 className="text-gray-900 text-xl max-md:hidden p-4">دسترسی سریع</h2>

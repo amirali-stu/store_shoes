@@ -6,14 +6,14 @@ function Article() {
   return (
     <a
       href="#"
-      className="relative p-4 cursor-pointer rounded-lg border-2 border-gray-50 font-sans-medium transition-all duration-300 hover:border-green-400 overflow-hidden group"
+      className="max-md:w-full md:w-full relative p-4 cursor-pointer rounded-lg border-2 border-gray-50 font-sans-medium transition-all duration-300 hover:border-green-400 overflow-hidden group"
     >
       <Image
         src={"/images/products/Image.png"}
         alt="blog"
+        className="object-contain rounded-lg"
         width={550}
         height={550}
-        className="rounded-lg"
       />
 
       <h3 className="text-gray-900 text-xl max-w-74 truncate py-3">
