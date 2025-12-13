@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
   --background: #ffffff;
@@ -57,7 +58,7 @@
   /* green custom (done) */
 
   /* gray custom (start) */
-  --color-gray-50: #f2f2f2;
+  /* --color-gray-50: #f2f2f2;
   --color-gray-100: #e5e5e5;
   --color-gray-200: #cccccc;
   --color-gray-300: #b3b3b3;
@@ -66,13 +67,11 @@
   --color-gray-600: #666666;
   --color-gray-700: #4d4d4d;
   --color-gray-800: #333333;
-  --color-gray-900: #1a1a1a;
+  --color-gray-900: #1a1a1a; */
   /* gray custom (done) */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
 }
 
 .container-custom {

@@ -15,7 +15,7 @@ function ProductBox() {
     const productDetails = {
       id: crypto.randomUUID(),
       title: "ذرت",
-      count:1,
+      count: 1,
       price: 14.99,
       img: "/images/products/Image.png",
     };
@@ -45,21 +45,23 @@ function ProductBox() {
   };
 
   return (
-    <div className="md:max-w-[220px] max-md:w-full flex items-center flex-col border-2 border-gray-100 rounded-lg group transition-all duration-400 hover:shadow-[0_0_10px_-2px_#999999] hover:border-gray-400/70 lg:hover:-translate-y-1 relative overflow-hidden font-sans-medium">
-      <div className="relative h-full w-full">
+    <div className="md:max-w-[220px] max-md:w-full flex items-center flex-col border-2 border-gray-100 dark:border-slate-800 rounded-lg group transition-all duration-400 hover:shadow-[0_0_10px_-2px_#999999] hover:border-gray-400/70 lg:hover:-translate-y-1 relative overflow-hidden font-sans-medium">
+      <div className="relative h-full w-full m-0 p-0">
         <Image
-          src="/images/products/Image.png"
+          src="/images/banner.png"
           alt="Product image"
-          className="object-contain max-lg:w-full sm:h-[200px] md:h-[200px] max-sm:h-[150px]"
+          className="w-full h-full xl:h-[200px] lg:h-[200px] md:h-full"
           width={200}
           height={200}
         />
       </div>
       <div className="w-full p-4 flex items-center font-sans-medium justify-between">
         <div>
-          <h4 className="text-gray-700 text-xl font-sans-regular">ذرت</h4>
-          <p className="text-gray-900 text-lg"> ت14.99</p>
-          <div className="flex items-center text-yellow-600">
+          <h4 className="text-gray-700 dark:text-white text-xl font-sans-regular">
+            ذرت
+          </h4>
+          <p className="text-gray-900 dark:text-white text-lg"> ت14.99</p>
+          <div className="flex items-center text-yellow-600 dark:text-yellow-500">
             <FaStar />
             <FaStar />
             <FaStar />
@@ -68,7 +70,7 @@ function ProductBox() {
           </div>
         </div>
         <div
-          className="bg-gray-50 transition-all duration-400 group-hover:text-white group-hover:bg-success flex items-center justify-center rounded-full p-2 cursor-pointer"
+          className="bg-gray-50 dark:bg-slate-800 dark:text-gray-100 transition-all duration-400 group-hover:text-white group-hover:bg-success dark:group-hover:bg-slate-700 flex items-center justify-center rounded-full p-2 cursor-pointer"
           onClick={addToLocalStorage}
         >
           <BsBasket size={22} />
@@ -83,12 +85,12 @@ function ProductBox() {
       </div>
       {/* hidden box */}
       <Link href={"/wishlist"}>
-        <div className="max-lg:hidden absolute bg-white border-2 border-gray-50 flex items-center justify-center p-1 rounded-full w-9 h-9 top-5 right-70 transition-all duration-300 group-hover:right-42 group-hover:z-10 -z-20 cursor-pointer">
+        <div className="max-lg:hidden absolute bg-white dark:bg-slate-800 border-2 border-gray-50 dark:border-slate-700 flex items-center justify-center p-1 rounded-full w-9 h-9 top-5 right-70 transition-all duration-300 group-hover:right-42 group-hover:z-10 -z-20 cursor-pointer">
           <IoMdHeartEmpty size={28} />
         </div>
       </Link>
       <Link href={"/product/1"}>
-        <div className="max-lg:hidden absolute bg-white border-2 border-gray-50 flex items-center justify-center p-1 rounded-full w-9 h-9 top-15 right-70 transition-all duration-300 delay-100 group-hover:right-42 group-hover:z-10 -z-20 cursor-pointer">
+        <div className="max-lg:hidden absolute bg-white dark:bg-slate-800 border-2 border-gray-50 dark:border-slate-700 flex items-center justify-center p-1 rounded-full w-9 h-9 top-15 right-70 transition-all duration-300 delay-100 group-hover:right-42 group-hover:z-10 -z-20 cursor-pointer">
           <MdOutlineRemoveRedEye size={28} />
         </div>
       </Link>

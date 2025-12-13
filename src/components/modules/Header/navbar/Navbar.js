@@ -2,8 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 import MiddleHeader from "../MiddleHeader";
-import BottomHeader from "../BottomHeader";
-import ContainerBox from "../../Basket/ContainerBox";
 import { usePathname } from "next/navigation";
 
 function Navbar() {
@@ -19,9 +17,8 @@ function Navbar() {
   return (
     <>
       <MiddleHeader setIsOpenBasket={setIsOpenBasket} />
-      <BottomHeader />
 
-      <ContainerBox isOpenBasket={isOpenBasket} onCloseBasket={onCloseBasket} />
+      {/* <ContainerBox isOpenBasket={isOpenBasket} onCloseBasket={onCloseBasket} /> */}
     </>
   );
 }

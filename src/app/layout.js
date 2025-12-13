@@ -1,63 +1,37 @@
 import localFont from "next/font/local";
 import Navbar from "@/components/modules/Header/navbar/Navbar";
-import "./globals.css";
-import "./slider.css";
+import "../styles/globals.css";
+import "../styles/custom-style.css";
+import "../styles/slider.css";
 import Footer from "@/components/modules/Footer/Footer";
 import GoUp from "@/components/modules/MoveUp/GoUp";
 import Breadcrumb from "@/components/modules/Breadcrumb/Breadcrumb";
 import { Slide, ToastContainer } from "react-toastify";
-import TopHeader from "@/components/modules/Header/TopHeader";
 
-const SanaRegular = localFont({
-  src: "../../public/fonts/Sans-Regular.ttf",
-  variable: "--font-sana-regular",
-});
-const SanaMedium = localFont({
-  src: "../../public/fonts/Sans-Medium.ttf",
-  variable: "--font-sana-medium",
-});
-const SanaBold = localFont({
-  src: "../../public/fonts/Sans-Bold.ttf",
-  variable: "--font-sana-bold",
-});
-const SanaDemiBold = localFont({
-  src: "../../public/fonts/Sans-DemiBold.ttf",
-  variable: "--font-sana-demibold",
-});
-const YekanMedium = localFont({
-  src: "../../public/fonts/YekanBakh-Medium.ttf",
-  variable: "--font-yekan-medium",
-});
-const YekanBold = localFont({
-  src: "../../public/fonts/YekanBakh-Bold.ttf",
-  variable: "--font-yekan-bold",
-});
-const YekanRegular = localFont({
-  src: "../../public/fonts/YekanBakh-Regular.ttf",
-  variable: "--font-yekan-regular",
-});
+import { fonts } from "@/styles/fonts";
+import Newsletter from "@/components/templates/Newsletter/Newsletter";
 
 export default function RootLayout({ children }) {
   return (
     <html
       lang="fa"
       dir="rtl"
-      className={`${SanaRegular.variable} ${SanaMedium.variable} ${SanaBold.variable} ${SanaDemiBold.variable} ${YekanMedium.variable} ${YekanBold.variable} ${YekanRegular.variable}`}
+      className={`${fonts.join(" ")} transition-all duration-300`}
     >
-      <body>
-        <header className="w-full flex items-center flex-col">
-          <TopHeader />
+      <body className="antialiased">
+        <header className="fixed top-0 inset-x-0 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-gray-200 dark:border-slate-800 z-50">
           <Navbar />
         </header>
 
-        <Breadcrumb />
-
-        <main>
+        <main className="pt-24 pb-12 min-h-screen bg-gray-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-all duration-300">
+          <Breadcrumb />
           {children}
           <GoUp />
         </main>
 
-        <footer className="w-full">
+        <footer className="bg-white dark:bg-slate-950 border-t border-gray-200 dark:border-slate-800 pt-16 pb-8">
+          <Newsletter />
+
           <Footer />
         </footer>
 

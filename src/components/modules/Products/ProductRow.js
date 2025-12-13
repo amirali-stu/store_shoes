@@ -16,7 +16,7 @@ function ProductRow() {
       title: "ذرت",
       count: 1,
       price: 14.99,
-      img: "/images/products/Image.png",
+      img: "/images/banner.png",
     };
 
     const existingBasket = JSON.parse(localStorage.getItem("basket") || "[]");
@@ -44,7 +44,7 @@ function ProductRow() {
   };
 
   return (
-    <div className="sm:w-[312px] w-full flex items-center border-2 border-gray-100 rounded-lg group transition-all duration-400 justify-between hover:shadow-[0_0_10px_-2px_#999999] hover:border-gray-400/70 lg:hover:-translate-y-1 relative overflow-hidden">
+    <div className="sm:w-[312px] w-full flex items-center border-2 border-gray-100 dark:border-slate-800 rounded-lg group transition-all duration-400 justify-between hover:shadow-[0_0_10px_-2px_#999999] hover:border-gray-400/70 lg:hover:-translate-y-1 relative overflow-hidden">
       <div className="relative h-full w-full">
         <Image
           src="/images/products/Image.png"

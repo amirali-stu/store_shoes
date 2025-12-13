@@ -7,7 +7,7 @@ function TopComment() {
   return (
     <div className="p-6 bg-white rounded-lg flex flex-col gap-y-4 font-sans-medium">
       <Image src={Vector} width={30} height={30} alt="svg" />
-      <p className="line-clamp-4 text-right">
+      <p className="line-clamp-4 text-right text-black">
         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده
         از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و
         سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای

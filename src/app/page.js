@@ -10,16 +10,17 @@ import Box from "@/components/templates/Category/Box";
 import Banner from "@/components/templates/Slider/Banner";
 import Comment from "@/components/templates/Slider/Comment";
 import Article from "@/components/modules/Blog/Article";
+import Hero from "@/components/modules/Header/Hero";
 
 export default function Home() {
   return (
     <>
-      <div className="flex items-center flex-col ">
-        {/* بنر اسلایدر تبلیغاتی */}
-        <div className="container-custom relative mt-8">
-          <Banner />
+      <div className="flex items-center flex-col z-10">
+        {/* بنر تبلیغاتی */}
+        <section className="container-custom relative mt-8">
+          <Hero />
 
-          <div className="xl:w-[80%] xl:h-[128px] w-full max-xl:mt-8 max-xl:border-2 max-xl:border-gray-50 xl:absolute xl:-bottom-[10%] xl:left-1/2 xl:-translate-x-1/2 bg-white font-sans-medium shadow-md rounded-xl z-10 xl:p-10 max-xl:p-3 xl:flex xl:items-center xl:gap-x-8 max-xl:grid max-xl:grid-cols-2 max-sm:grid-cols-1 max-xl:gap-8">
+          <div className="xl:w-[80%] xl:h-[128px] w-full max-xl:mt-8 max-xl:border-2 max-xl:border-gray-50 dark:border-0 xl:absolute xl:-bottom-[10%] xl:left-1/2 xl:-translate-x-1/2 bg-white dark:bg-slate-800 dark:**:text-white font-sans-medium shadow-md rounded-xl z-10 xl:p-10 max-xl:p-3 xl:flex xl:items-center xl:gap-x-8 max-xl:grid max-xl:grid-cols-2 max-sm:grid-cols-1 max-xl:gap-8">
             <div className="flex-1">
               <div className="flex items-center gap-x-4">
                 <Image src={car} alt="لوگو" width={40} height={40} priority />
@@ -84,11 +85,11 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </section>
 
         {/* محصولات برتر  */}
         <div className="container-custom md:mt-40 max-md:mt-10">
-          <h2 className="text-3xl max-md:text-2xl text-gray-900 text-center font-sans-demibold relative">
+          <h2 className="text-3xl max-md:text-2xl text-gray-900 dark:text-white text-center font-sans-demibold relative">
             محصولات برتر
             <div className="flex justify-center mt-2 gap-x-1">
               <span className="block w-3 h-1 bg-success/30"></span>
@@ -106,8 +107,7 @@ export default function Home() {
             <ProductBox />
           </div>
 
-          {/* پیشنهاد محصولات براساس قیمت */}
-          <div className="flex items-center xl:gap-x-6 lg:gap-x-2 max-lg:gap-x-4 mt-10 max-sm:flex-col lg:justify-center ">
+          {/* <div className="flex items-center xl:gap-x-6 lg:gap-x-2 max-lg:gap-x-4 mt-10 max-sm:flex-col lg:justify-center ">
             <div className="max-sm:w-full max-sm:my-2 max-lg:flex-1">
               <div className="flex items-center justify-between w-full mb-4">
                 <h2 className="text-lg text-gray-900 font-sans-demibold relative">
@@ -169,7 +169,7 @@ export default function Home() {
               </div>
             </div>
 
-            {/* offer banner */}
+        
             <div
               id="product-banner"
               className="w-[312px] max-xl:hidden h-[426px] mt-10 font-sans-medium flex items-center flex-col pt-10"
@@ -188,13 +188,13 @@ export default function Home() {
                 <span>خرید</span>
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* دسته بندی محصولات */}
         <div className="container-custom md:mt-30 max-md:mt-10">
-          <h2 className="text-3xl max-md:text-2xl text-gray-900 text-center font-sans-demibold relative">
-            دسته بندی های اصلی 💫
+          <h2 className="text-3xl max-md:text-2xl text-gray-900 dark:text-white text-center font-sans-demibold relative">
+            دسته بندی های محبوب 💫
             <div className="flex justify-center mt-2 gap-x-1">
               <span className="block w-3 h-1 bg-success/30"></span>
               <span className="block w-6 h-1 bg-success"></span>
@@ -202,19 +202,19 @@ export default function Home() {
             </div>
           </h2>
 
-          <div className="flex flex-wrap gap-1 mt-5 md:justify-between max-md:justify-between gap-y-2">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
             <Box count={152} title={"دمپایی"} />
             <Box count={354} title={"کتونی"} />
             <Box count={21} title={"کفش"} />
             <Box count={984} title={"صندل"} />
-            <Box count={21} title={"اسکیچرز"} />
+            {/* <Box count={21} title={"اسکیچرز"} /> */}
           </div>
         </div>
 
         {/* جدیدترین محصولات */}
         <div className="container-custom md:mt-40 max-md:mt-10">
           <div className="flex items-center justify-between">
-            <h2 className="text-3xl max-md:text-2xl text-gray-900 text-right font-sans-demibold relative">
+            <h2 className="text-3xl max-md:text-2xl text-gray-900 dark:text-white  text-right font-sans-demibold relative">
               جدیدترین محصولات
               <div className="flex mt-2 gap-x-1">
                 <span className="block w-3 h-1 bg-success/30"></span>
@@ -245,9 +245,9 @@ export default function Home() {
         </div>
 
         {/* کامنت های برتر */}
-        <div className="container-custom bg-gray-50 md:mt-20 md:py-10 max-md:py-5 max-md:mt-10 w-full">
+        <div className="container-custom bg-gray-100 dark:bg-slate-800/80 md:mt-20 md:py-10 max-md:py-5 max-md:mt-10 w-full">
           <div className="flex items-center justify-between">
-            <h2 className="text-3xl max-md:text-2xl text-gray-900 text-right font-sans-demibold relative">
+            <h2 className="text-3xl max-md:text-2xl text-gray-900 dark:text-white text-right font-sans-demibold relative">
               کامنت های برتر
               <div className="flex mt-2 gap-x-1">
                 <span className="block w-3 h-1 bg-success/30"></span>
@@ -274,7 +274,7 @@ export default function Home() {
 
         {/* وبلاگ */}
         <div className="container-custom md:mt-30 md:mb-20 max-md:mb-10 max-md:mt-10">
-          <h2 className="text-3xl max-md:text-2xl text-gray-900 text-center font-sans-demibold relative">
+          <h2 className="text-3xl max-md:text-2xl text-gray-900 dark:text-white text-center font-sans-demibold relative">
             وبلاگ های مارا دنبال کنید...
             <div className="flex justify-center mt-2 gap-x-1">
               <span className="block w-3 h-1 bg-success/30"></span>
@@ -283,7 +283,7 @@ export default function Home() {
             </div>
           </h2>
 
-          <div className="grid justify-center lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-3 grid-cols-1 w-full mt-5 gap-4 justify-items-center">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
             <Article />
             <Article />
             <Article />
