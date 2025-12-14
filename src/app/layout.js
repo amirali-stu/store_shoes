@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
           <Navbar />
         </header>
 
-        <main className="pt-24 pb-12 min-h-screen bg-gray-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-all duration-300">
+        <main className="pt-16 pb-12 min-h-screen bg-gray-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-all duration-300">
           <Breadcrumb />
           {children}
           <GoUp />

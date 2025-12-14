@@ -12,12 +12,18 @@ export default function RelatedProductSlider() {
   return (
     <div className="w-full relative">
       {/* دکمه قبل */}
-      <button className="swiper-button-prev-custom text-lg -rotate-90 absolute -top-8 cursor-pointer border-2 border-gray-100 left-12 z-10 bg-white/70 transition-all duration-300 hover:bg-gray-100/20 backdrop-blur-md p-2 rounded-full shadow-md">
+      <button
+        className="swiper-button-prev-custom text-lg -rotate-90 absolute -top-8 cursor-pointer border-2 border-gray-100 dark:border-slate-700 left-12 z-10 bg-white/70 dark:bg-slate-600 transition-all duration-300 hover:bg-gray-100/20 
+      dark:hover:bg-slate-500 backdrop-blur-md p-2 rounded-full shadow-md"
+      >
         <IoIosArrowDown />
       </button>
 
       {/* دکمه بعد */}
-      <button className="swiper-button-next-custom text-lg rotate-90 absolute -top-8 cursor-pointer border-2 border-gray-100 left-2 z-10 bg-white/70 transition-all duration-300 hover:bg-gray-100/20 backdrop-blur-md p-2 rounded-full shadow-md">
+      <button
+        className="swiper-button-next-custom text-lg rotate-90 absolute -top-8 cursor-pointer border-2 border-gray-100 dark:border-slate-700 left-2 z-10 bg-white/70 dark:bg-slate-600 transition-all duration-300 hover:bg-gray-100/20 
+      dark:hover:bg-slate-500 backdrop-blur-md p-2 rounded-full shadow-md"
+      >
         <IoIosArrowDown />
       </button>
 

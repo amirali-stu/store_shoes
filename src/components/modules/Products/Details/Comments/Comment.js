@@ -15,7 +15,7 @@ function Comment() {
             className="rounded-full"
           />
           <div className="flex flex-col gap-y-1">
-            <h3 className="text-gray-900 text-xl">رضا احمدی</h3>
+            <h3 className="text-gray-900 dark:text-gray-200 text-xl">رضا احمدی</h3>
             <div className="flex items-center gap-x-1">
               {[...Array(5)].map((_, i) => (
                 <FaStar key={i} className="text-warning w-3 h-3" />
@@ -25,7 +25,7 @@ function Comment() {
         </div>
         <p className="text-gray-400">2 دقیقه پیش</p>
       </div>
-      <p className="text-gray-500 leading-8 line-clamp-2">
+      <p className="text-gray-500 dark:text-gray-300 leading-8 line-clamp-2">
         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده
         از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و
         سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای

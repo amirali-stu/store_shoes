@@ -45,7 +45,7 @@ function ProductBox() {
   };
 
   return (
-    <div className="md:max-w-[220px] max-md:w-full flex items-center flex-col border-2 border-gray-100 dark:border-slate-800 rounded-lg group transition-all duration-400 hover:shadow-[0_0_10px_-2px_#999999] hover:border-gray-400/70 lg:hover:-translate-y-1 relative overflow-hidden font-sans-medium">
+    <div className="md:max-w-[220px] max-md:w-full flex items-center flex-col border-2 border-gray-100 dark:border-slate-700 rounded-lg group transition-all duration-400 hover:shadow-[0_0_10px_-2px_#999999] dark:hover:shadow-[0px_0px_10px] dark:hover:shadow-slate-700/60 hover:border-gray-400/70 dark:hover:border-slate-600 lg:hover:-translate-y-1 relative overflow-hidden font-sans-medium">
       <div className="relative h-full w-full m-0 p-0">
         <Image
           src="/images/banner.png"
