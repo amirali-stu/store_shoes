@@ -7,7 +7,7 @@ import { IoIosSearch, IoMdHeartEmpty } from "react-icons/io";
 import { FiShoppingBag } from "react-icons/fi";
 import { LuUser, LuSun, LuMoon } from "react-icons/lu";
 
-function MiddleHeader({ setIsOpenBasket }) {
+function MiddleHeader() {
   const [basketLength, setBasketLength] = useState(0);
   const [theme, setTheme] = useState("light");
 
@@ -17,10 +17,13 @@ function MiddleHeader({ setIsOpenBasket }) {
       setBasketLength(basket.length);
     };
 
+    // dark mood
+    const savedTheme = localStorage.getItem("theme") || "light";
+    setTheme(savedTheme);
+    document.documentElement.classList.toggle("dark", savedTheme === "dark");
+
     handleBasketUpdate();
-
     window.addEventListener("basketUpdated", handleBasketUpdate);
-
     return () => {
       window.removeEventListener("basketUpdated", handleBasketUpdate);
     };
@@ -116,17 +119,16 @@ function MiddleHeader({ setIsOpenBasket }) {
           </button>
         </Link>
 
-        <div
-          className="relative p-2 text-slate-900 dark:text-white transition-colors rounded-full bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700"
-          onClick={() => setIsOpenBasket(true)}
-        >
-          <FiShoppingBag size={20} />
-          {basketLength > 0 && (
-            <span className="absolute w-5.5 rounded-full text-sm -top-2.5 right-3 border-2 border-white bg-green-600 text-white text-center flex items-center justify-center">
-              {basketLength}
-            </span>
-          )}
-        </div>
+        <Link href={"/shopping_cart"}>
+          <div className="relative p-2 text-slate-900 dark:text-white transition-colors rounded-full bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700">
+            <FiShoppingBag size={20} />
+            {basketLength > 0 && (
+              <span className="absolute top-0 right-0 -mt-1 -mr-1 h-4 w-4 bg-red-500 rounded-full text-[10px] font-bold text-white flex items-center justify-center">
+                {basketLength}
+              </span>
+            )}
+          </div>
+        </Link>
       </div>
     </div>
   );

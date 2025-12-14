@@ -34,7 +34,7 @@ function Row({
   };
 
   return (
-    <div className="bg-gray-50 flex h-34 items-center gap-x-4 p-3 rounded-xl relative transition-all duration-300">
+    <div className="bg-gray-50 dark:bg-slate-600/20 flex h-34 items-center gap-x-4 p-3 rounded-xl relative transition-all duration-300">
       <div className="w-34 h-full">
         <Image
           src={img}
@@ -51,7 +51,7 @@ function Row({
         </div>
 
         <div className="flex items-center gap-x-2">
-          <p className="text-xl max-md:text-base text-gray-900">
+          <p className="text-xl max-md:text-base text-gray-900 dark:text-gray-300">
             ${price}
             <span className="line-through text-sm max-sm:text-xs text-gray-400 ml-2 max-sm:ml-1 font-normal">
               $48,00
@@ -61,14 +61,14 @@ function Row({
 
         <div className="inline-flex rounded-full items-center md:gap-x-3 gap-x-2">
           <div
-            className="md:p-2 p-1.5 md:text-lg text-base rounded-full cursor-pointer bg-gray-50 flex items-center justify-center text-gray-600 transition-all duration-300 hover:text-gray-900"
+            className="p-1.5 text-base rounded-full cursor-pointer bg-gray-50 dark:bg-slate-700 dark:text-gray-300 flex items-center justify-center text-gray-600 transition-all duration-300 hover:text-gray-900 dark:hover:text-gray-400"
             onClick={minesCounter}
           >
             <FaMinus />
           </div>
           <p className="text-xl">{counter}</p>
           <div
-            className="md:p-2 p-1.5 md:text-lg text-base rounded-full cursor-pointer bg-gray-50 flex items-center justify-center text-gray-600 transition-all duration-300 hover:text-gray-900"
+            className="p-1.5 text-base rounded-full cursor-pointer bg-gray-50 dark:bg-slate-700 dark:text-gray-300 flex items-center justify-center text-gray-600 transition-all duration-300 hover:text-gray-900 dark:hover:text-gray-400"
             onClick={plusCounter}
           >
             <FaPlus />
@@ -77,9 +77,9 @@ function Row({
       </div>
 
       <div className="flex items-center justify-center">
-        <div className="p-1 border-2 border-gray-100 rounded-full cursor-pointer">
+        <div className="p-1 border-2 border-gray-100 dark:border-slate-700 rounded-full cursor-pointer">
           <IoClose
-            className="text-lg text-gray-900"
+            className="text-lg text-gray-900 dark:text-gray-300"
             onClick={() => removeProductInBasket(id)}
           />
         </div>

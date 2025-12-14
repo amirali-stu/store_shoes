@@ -55,8 +55,8 @@ function Login() {
 
   return (
     <div className="w-full font-sans-medium flex items-center justify-center">
-      <div className="w-[520px] h-[370px] p-6 bg-white rounded-lg border-2 border-gray-100 shadow-lg">
-        <h1 className="text-center text-2xl font-sans-demibold mb-3 text-gray-900">
+      <div className="w-[520px] h-[370px] p-6 bg-white dark:bg-slate-600/20 rounded-lg border-2 border-gray-100 dark:border-slate-700 shadow-lg">
+        <h1 className="text-center text-2xl font-sans-demibold mb-3 text-gray-900 dark:text-gray-300">
           ورود
         </h1>
         <form
@@ -68,7 +68,7 @@ function Login() {
             placeholder="ایمل"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full border-2 border-gray-100 rounded-md pr-2.5  py-3.5 placeholder:text-gray-400 text-gray-600 outline-0 transition-all duration-300 focus:ring-2 ring-blue-600"
+            className="w-full border-2 border-gray-100 dark:border-slate-700 rounded-md pr-2.5  py-3.5 placeholder:text-gray-400 text-gray-600 dark:text-gray-400 outline-0 transition-all duration-300 focus:ring-2 ring-blue-600"
             required
           />
           <div className="relative w-full">
@@ -77,8 +77,8 @@ function Login() {
               placeholder="رمز عبور"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full border-2 border-gray-100 rounded-md pr-2.5 py-3.5 
-               placeholder:text-gray-400 text-gray-600 outline-0 transition-all duration-300 focus:ring-2 ring-blue-600"
+              className="w-full border-2 border-gray-100 dark:border-slate-700 rounded-md pr-2.5 py-3.5 
+               placeholder:text-gray-400 text-gray-600 dark:text-gray-400 outline-0 transition-all duration-300 focus:ring-2 ring-blue-600"
               required
             />
 
@@ -94,18 +94,35 @@ function Login() {
             </span>
           </div>
           <div className="w-full flex items-center justify-between">
-            <p className="text-gray-600">فراموشی رمز عبور؟</p>
+            <p className="text-gray-600 dark:text-gray-400">
+              فراموشی رمز عبور؟
+            </p>
             <div className="flex items-center gap-x-2">
               <label
                 htmlFor="rememberme"
-                className="text-sm text-gray-600 select-none cursor-pointer"
+                className="text-sm text-gray-600 dark:text-gray-400 select-none cursor-pointer"
               >
                 مرا به خاطر بسپار
               </label>
               <input
                 type="checkbox"
                 id="rememberme"
-                className="w-5 h-5 rounded-sm border-2 border-gray-100"
+                className="    w-5 h-5 rounded-sm border-2 appearance-none cursor-pointer
+    flex items-center justify-center
+
+    bg-white border-gray-300
+    dark:bg-slate-600/20 dark:border-slate-700
+
+    checked:bg-blue-500 checked:border-blue-500
+    dark:checked:bg-blue-400
+
+    relative
+    checked:after:content-['✓']
+    checked:after:absolute
+    checked:after:text-white
+    checked:after:text-sm
+    checked:after:font-bold
+    checked:after:leading-none"
               />
             </div>
           </div>
@@ -113,9 +130,12 @@ function Login() {
             ورود
           </button>
         </form>
-        <p className="block text-center mt-5 text-gray-600">
+        <p className="block text-center mt-5 text-gray-600 dark:text-gray-400">
           آیا اکانت ندارید؟{" "}
-          <Link href={"./signup"} className="text-gray-900 font-sans-bold">
+          <Link
+            href={"./signup"}
+            className="text-gray-900 dark:text-gray-300 font-sans-bold"
+          >
             ثبت نام
           </Link>
         </p>

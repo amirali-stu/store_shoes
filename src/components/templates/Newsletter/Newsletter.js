@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Newsletter() {
   return (
     <section className="lg:px-20 md:px-4 px-4 font-sans-medium">
-      <div className="relative overflow-hidden transition-all duration-300 rounded-3xl border border-black/5 dark:border-white/10 bg-gray-100 dark:bg-slate-800 text-black dark:text-white p-6 md:p-10">
+      <div className="relative max-w-7xl mx-auto overflow-hidden transition-all duration-300 rounded-3xl border border-black/5 dark:border-white/10 bg-gray-100 dark:bg-slate-800 text-black dark:text-white p-6 md:p-10">
         {/* subtle decoration */}
         <div className="pointer-events-none absolute -top-16 -left-16 h-56 w-56 rounded-full bg-black/5 dark:bg-white/10 blur-2xl" />
         <div className="pointer-events-none absolute -bottom-20 -right-20 h-72 w-72 rounded-full bg-black/5 dark:bg-white/10 blur-2xl" />

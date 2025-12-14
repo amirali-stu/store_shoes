@@ -11,8 +11,8 @@ function Profile() {
         height={120}
         className="rounded-full"
       />
-      <h2 className="text-gray-900 text-xl">رضا معصومی</h2>
-      <p className="text-gray-500">کاربر</p>
+      <h2 className="text-gray-900 dark:text-gray-300 text-xl">رضا معصومی</h2>
+      <p className="text-gray-500 dark:text-gray-400">کاربر</p>
       <button className="text-success cursor-pointer">ویرایش پروفایل</button>
     </div>
   );

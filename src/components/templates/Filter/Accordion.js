@@ -11,13 +11,13 @@ export default function Accordion({ title, children }) {
     <div>
       <button
         type="button"
-        className="flex font-sans-medium items-center justify-between w-full py-4 font-medium gap-3 cursor-pointer border-b-2 border-gray-100/70"
+        className="flex font-sans-medium items-center justify-between w-full py-4 font-medium gap-3 cursor-pointer border-b-2 border-gray-100/70 dark:border-slate-700"
         onClick={() => setIsOpen(!isOpen)}
       >
-        <span className="font-sans-bold text-xl">{title}</span>
+        <span className="font-sans-bold text-xl dark:text-gray-300">{title}</span>
         <IoIosArrowDown
           size={22}
-          className={`transition-all duration-300 ${
+          className={`transition-all duration-300 dark:text-slate-600 ${
             isOpen ? "rotate-180" : "rotate-0"
           }`}
         />

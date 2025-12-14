@@ -69,14 +69,14 @@ export default function ProductFilterBox() {
                   className={`w-3 h-3 p-2 rounded-full border transition-all duration-300 border-gray-600 appearance-none cursor-pointer
     ${
       selected.includes(item)
-        ? "bg-blue-500 ring-2 ring-blue-500 border-white"
-        : "bg-white border-gray-600"
+        ? "bg-blue-500 ring-2 ring-blue-500 border-white dark:border-slate-700"
+        : "bg-white dark:bg-slate-600/20 border-gray-600"
     }`}
                   style={{
                     transitionTimingFunction: "cubic-bezier(0.1, 1, 1, 1)",
                   }}
                 />
-                <span className="text-gray-700">
+                <span className="text-gray-700 dark:text-gray-300">
                   {item} <span className="text-gray-400 text-sm">(120)</span>
                 </span>
               </label>
@@ -87,15 +87,7 @@ export default function ProductFilterBox() {
         <Accordion title="قیمت">
           <div className="px-4">
             <div className="relative w-full h-10">
-              <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-1.5 bg-gray-300 rounded-full"></div>
-
-              <div
-                className="absolute top-1/2 -translate-y-1/2 h-1.5 bg-blue-500 rounded-full transition-all duration-300"
-                style={{
-                  left: `${minPercent}%`,
-                  right: `${100 - maxPercent}%`,
-                }}
-              />
+              <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-1.5 bg-gray-300 backdrop-blur-md dark:bg-slate-500/40 rounded-full"></div>
 
               <input
                 type="range"
@@ -119,15 +111,15 @@ export default function ProductFilterBox() {
             </div>
 
             <div className="flex gap-x-1 justify-between items-center mt-4 text-sm font-medium text-gray-700">
-              <div className="bg-gray-100 px-2 py-2 rounded-lg text-nowrap">
+              <div className="bg-gray-100 dark:bg-slate-600/20 dark:text-gray-300 px-2 py-2 rounded-lg text-nowrap">
                 حداقل:{" "}
                 <span className="text-blue-600 font-bold">
                   {minValue.toLocaleString("fa-IR")}
                 </span>{" "}
                 تومان
               </div>
-              <span className="text-gray-500">تا</span>
-              <div className="bg-gray-100 px-2 py-2 rounded-lg text-nowrap">
+              <span className="text-gray-500 dark:text-gray-300">تا</span>
+              <div className="bg-gray-100 dark:bg-slate-600/20 dark:text-gray-300 px-2 py-2 rounded-lg text-nowrap">
                 حداکثر:{" "}
                 <span className="text-blue-600 font-bold">
                   {maxValue.toLocaleString("fa-IR")}
@@ -136,7 +128,7 @@ export default function ProductFilterBox() {
               </div>
             </div>
 
-            <div className="text-center text-xs text-gray-500 mt-2">
+            <div className="text-center text-xs text-gray-500 dark:text-gray-300 mt-2">
               فاصله انتخابی: {(maxValue - minValue).toLocaleString("fa-IR")}{" "}
               تومان
             </div>
@@ -150,15 +142,30 @@ export default function ProductFilterBox() {
                 key={rating}
                 className={`flex items-center gap-3 cursor-pointer select-none rounded-lg px-3 py-2 transition-all ${
                   selectedRatings.includes(rating)
-                    ? "bg-blue-50 text-blue-700 font-medium"
-                    : "hover:bg-gray-50"
+                    ? "bg-blue-50 dark:bg-slate-600/20 text-blue-700 font-medium"
+                    : "hover:bg-gray-50 dark:hover:bg-slate-400/20"
                 }`}
               >
                 <input
                   type="checkbox"
                   checked={selectedRatings.includes(rating)}
                   onChange={() => handleRatingToggle(rating)}
-                  className="w-5 h-5 text-blue-600 rounded border-gray-300 focus:ring-blue-500 accent-blue-600"
+                  className="    w-5 h-5 rounded-sm border-2 appearance-none cursor-pointer
+    flex items-center justify-center
+
+    bg-white border-gray-300
+    dark:bg-slate-600/20 dark:border-slate-700
+
+    checked:bg-blue-500 checked:border-blue-500
+    dark:checked:bg-blue-400
+
+    relative
+    checked:after:content-['✓']
+    checked:after:absolute
+    checked:after:text-white
+    checked:after:text-sm
+    checked:after:font-bold
+    checked:after:leading-none"
                 />
 
                 <div className="flex items-center gap-1">

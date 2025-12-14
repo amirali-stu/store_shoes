@@ -11,8 +11,8 @@ export default function ProductContainer() {
           </label>
           <SelectBox />
         </div>
-        <p className="text-gray-400 text-md max-md:text-sm">
-          <span className="text-gray-900">45</span> محصول پیدا شد
+        <p className="text-gray-400 dark:text-gray-300 text-md max-md:text-sm">
+          <span className="text-gray-900 dark:text-gray-500">45</span> محصول پیدا شد
         </p>
       </div>
       <div className="w-full grid xl:grid-cols-4 sm:grid-cols-3 gap-3 py-6">

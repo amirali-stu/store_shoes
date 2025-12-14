@@ -8,7 +8,7 @@ function WishList() {
   return (
     <div className="max-w-7xl mx-auto font-sans-medium px-4 py-8">
       <div className="flex items-center gap-x-3 mb-6 text-center justify-center">
-        <h1 className="text-3xl text-center text-gray-900 font-medium">
+        <h1 className="text-3xl text-center text-gray-900 dark:text-gray-300 font-medium">
           سبد خرید من
         </h1>
 

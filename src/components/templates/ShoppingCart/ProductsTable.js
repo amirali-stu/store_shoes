@@ -55,7 +55,7 @@ function ProductsTable() {
   return (
     <div
       className={`overflow-x-auto rounded-lg ${
-        basket.length < 1 && "border-2 border-gray-100"
+        basket.length < 1 && "border-2 border-gray-100 dark:border-slate-700"
       }`}
     >
       {basket.length >= 1 ? (
@@ -73,7 +73,7 @@ function ProductsTable() {
         <Link href={"/products"}>
           <div className="relative group w-full overflow-y-hidden cursor-pointer">
             {/* محتوای اصلی */}
-            <div className="text-center text-gray-600 p-4 text-2xl h-full flex flex-col items-center justify-center transition-all duration-300">
+            <div className="text-center text-gray-600 dark:text-gray-300 p-4 text-2xl h-full flex flex-col items-center justify-center transition-all duration-300">
               <p>سبد خرید خالی است</p>
               <Image src="/images/empty-basket.jpg" width={220} height={220} />
             </div>
@@ -85,7 +85,7 @@ function ProductsTable() {
                 height={180}
                 alt="Full basket offer"
               />
-              <p className="text-gray-900 text-2xl">
+              <p className="text-gray-900  text-2xl">
                 بریم سبد خریدمون رو پر کنیم{" "}
               </p>
             </div>

@@ -57,8 +57,8 @@ function Signup() {
 
   return (
     <div className="w-full font-sans-medium flex items-center justify-center">
-      <div className="w-[520px] h-[410px] p-6 bg-white rounded-lg border-2 border-gray-100 shadow-lg">
-        <h1 className="text-center text-2xl font-sans-demibold mb-3 text-gray-900">
+      <div className="w-[520px] h-[410px] p-6 bg-white dark:bg-slate-600/20 rounded-lg border-2 border-gray-100 dark:border-slate-700 shadow-lg">
+        <h1 className="text-center text-2xl font-sans-demibold mb-3 text-gray-900 dark:text-gray-300">
           ثبت نام
         </h1>
         <form
@@ -70,7 +70,7 @@ function Signup() {
             placeholder="ایمل"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full border-2 border-gray-100 rounded-md pr-2.5  py-3.5 placeholder:text-gray-400 text-gray-600 outline-0 transition-all duration-300 focus:ring-2 ring-blue-600"
+            className="w-full border-2 border-gray-100 dark:border-slate-700 rounded-md pr-2.5  py-3.5 placeholder:text-gray-400 text-gray-600 dark:text-gray-400 outline-0 transition-all duration-300 focus:ring-2 ring-blue-600"
             required
           />
           <div className="relative w-full">
@@ -79,14 +79,14 @@ function Signup() {
               placeholder="رمز عبور"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full border-2 border-gray-100 rounded-md pr-2.5 py-3.5 
-               placeholder:text-gray-400 text-gray-600 outline-0 transition-all duration-300 focus:ring-2 ring-blue-600"
+              className="w-full border-2 border-gray-100 dark:border-slate-700 rounded-md pr-2.5 py-3.5 
+               placeholder:text-gray-400 text-gray-600 dark:text-gray-400 outline-0 transition-all duration-300 focus:ring-2 ring-blue-600"
               required
             />
 
             <span
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute left-3 top-1/2 -translate-y-1/2 cursor-pointer text-gray-500"
+              className="absolute left-3 top-1/2 -translate-y-1/2 cursor-pointer text-gray-400"
             >
               {showPassword ? (
                 <LuEyeClosed size={22} />
@@ -101,14 +101,14 @@ function Signup() {
               placeholder="تکرار رمز عبور"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
-              className="w-full border-2 border-gray-100 rounded-md pr-2.5 py-3.5 
-               placeholder:text-gray-400 text-gray-600 outline-0 transition-all duration-300 focus:ring-2 ring-blue-600"
+              className="w-full border-2 border-gray-100 dark:border-slate-700 rounded-md pr-2.5 py-3.5 
+               placeholder:text-gray-400 text-gray-600 dark:text-gray-400 outline-0 transition-all duration-300 focus:ring-2 ring-blue-600"
               required
             />
 
             <span
               onClick={() => setShowPasswordConfirm(!showPasswordConfirm)}
-              className="absolute left-3 top-1/2 -translate-y-1/2 cursor-pointer text-gray-500"
+              className="absolute left-3 top-1/2 -translate-y-1/2 cursor-pointer text-gray-400"
             >
               {showPasswordConfirm ? (
                 <LuEyeClosed size={22} />
@@ -117,13 +117,16 @@ function Signup() {
               )}
             </span>
           </div>
-          <button className="w-full rounded-full text-xl bg-success text-white flex items-center justify-center text-center py-3 cursor-pointer transition-all duration-300 hover:bg-success/80">
+          <button className="w-full rounded-full text-xl bg-success dark:bg-success-dark text-white flex items-center justify-center text-center py-3 cursor-pointer transition-all duration-300 hover:bg-success/80">
             ثبت نام
           </button>
         </form>
-        <p className="block text-center mt-5 text-gray-600">
+        <p className="block text-center mt-5 text-gray-600 dark:text-gray-500">
           آیا اکانت دارید؟{" "}
-          <Link href={"./login"} className="text-gray-900 font-sans-bold">
+          <Link
+            href={"./login"}
+            className="text-gray-900 dark:text-gray-300 font-sans-bold"
+          >
             وارد شوید
           </Link>
         </p>

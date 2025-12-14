@@ -52,20 +52,20 @@ function CartTotal() {
   };
 
   return (
-    <div className="p-6 border-2 border-gray-100 rounded-lg ">
-      <h3 className="text-xl font-bold text-gray-900">مجموع خرید</h3>
-      <div className="*:py-3 divide-y-2 divide-gray-100 mt-2">
+    <div className="p-6 border-2 border-gray-100 dark:border-slate-700 rounded-lg ">
+      <h3 className="text-xl font-bold text-gray-900 dark:text-gray-300">مجموع خرید</h3>
+      <div className="*:py-3 divide-y-2 divide-gray-100 dark:divide-slate-700 mt-2">
         <div className="w-full flex items-center justify-between">
-          <p className="text-gray-700">مبلغ خرید</p>
-          <p className="text-gray-900">${total}</p>
+          <p className="text-gray-700 dark:text-gray-500">مبلغ خرید</p>
+          <p className="text-gray-900 dark:text-gray-300">${total}</p>
         </div>
         <div className="w-full flex items-center justify-between">
-          <p className="text-gray-700">هزینه ارسال</p>
-          <p className="text-gray-900">رایگان</p>
+          <p className="text-gray-700 dark:text-gray-500">هزینه ارسال</p>
+          <p className="text-gray-900 dark:text-gray-300">رایگان</p>
         </div>
         <div className="w-full flex items-center justify-between">
-          <p className="text-gray-700">مجموع کل</p>
-          <p className="text-gray-900">${total}</p>
+          <p className="text-gray-700 dark:text-gray-500">مجموع کل</p>
+          <p className="text-gray-900 dark:text-gray-300">${total}</p>
         </div>
       </div>
       <Tippy

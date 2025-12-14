@@ -245,7 +245,7 @@ export default function Home() {
         </div>
 
         {/* کامنت های برتر */}
-        <div className="container-custom bg-gray-100 dark:bg-slate-800/80 md:mt-20 md:py-10 max-md:py-5 max-md:mt-10 w-full">
+        <div className="container-custom bg-gray-100 rounded-lg dark:bg-slate-800/80 md:mt-20 md:py-10 max-md:py-5 max-md:mt-10 w-full">
           <div className="flex items-center justify-between">
             <h2 className="text-3xl max-md:text-2xl text-gray-900 dark:text-white text-right font-sans-demibold relative">
               کامنت های برتر
