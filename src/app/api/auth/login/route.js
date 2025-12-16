@@ -1,6 +1,6 @@
 import { cookies } from "next/headers";
 import connectToDb from "../../../../../database/db";
-import UserModel from "../../../../../schema/user";
+import UserModel from "../../../../../schema/user/user";
 import { confirmPasswordHashed, createToken } from "../../../../../utils/auth";
 import { loginValidation } from "../../../../../validation/loginValidation";
 

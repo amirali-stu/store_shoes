@@ -1,7 +1,7 @@
 import { cookies } from "next/headers";
 import { verifyToken } from "../../../../../utils/auth";
 import connectToDb from "../../../../../database/db";
-import UserModel from "../../../../../schema/user";
+import UserModel from "../../../../../schema/user/user";
 
 export async function GET() {
   try {

@@ -2,16 +2,8 @@ import mongoose, { Schema } from "mongoose";
 
 const userSchema = new Schema(
   {
-    username: {
-      type: String,
-      trim: true,
-      unique: true,
-      minlength: 3,
-      sparse: true,
-    },
     firstName: { type: String, trim: true },
     lastName: { type: String, trim: true },
-    age: { type: Number, min: 2, max: 120 },
     email: {
       type: String,
       unique: true,
@@ -20,15 +12,21 @@ const userSchema = new Schema(
       lowercase: true,
       match: [/^\S+@\S+\.\S+$/, "ایمیل معتبر نیست"],
     },
-    phone: { type: String },
-    streetAddress: String,
-    city: String,
-    province: String,
+
+    role: {
+      type: String,
+      enum: ["CUSTOMER", "ADMIN"],
+      default: "CUSTOMER",
+    },
     password: { type: String, required: true, min: 8 },
+
+    isActive: { type: Boolean, default: true, index: true },
   },
   { timestamps: true }
 );
 
-const UserModel = mongoose.models.user || mongoose.model("user", userSchema);
+userSchema.index({ email: 1 }, { unique: true });
+
+const UserModel = mongoose.models.User || mongoose.model("User", userSchema);
 
 export default UserModel;
