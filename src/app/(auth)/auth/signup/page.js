@@ -8,6 +8,7 @@ import { errorStyle, successStyle } from "@/app/ToastStyles";
 import { toast } from "react-toastify";
 import { useRouter } from "next/navigation";
 import { apiRequest } from "../../../../../services/axios/config/apiRequest";
+import { signIn } from "next-auth/react";
 
 function Signup() {
   const router = useRouter();
@@ -20,38 +21,40 @@ function Signup() {
   const signupForm = async (e) => {
     e.preventDefault();
 
-    try {
-      if (email.length < 13) {
-        return toast.error("ایمیل  نامعتبر است", errorStyle);
-      }
-      if (password.length < 8) {
-        return toast.error("گذرواژه باید حداقل 8 کاراکتر باشد", errorStyle);
-      }
-      if (password !== confirmPassword) {
-        return toast.error("گذرواژه با تکرار آن مطابقت ندارد", errorStyle);
-      }
+    if (email.length < 13) {
+      return toast.error("ایمیل  نامعتبر است", errorStyle);
+    }
+    if (password.length < 8) {
+      return toast.error("گذرواژه باید حداقل 8 کاراکتر باشد", errorStyle);
+    }
+    if (password !== confirmPassword) {
+      return toast.error("گذرواژه با تکرار آن مطابقت ندارد", errorStyle);
+    }
 
-      const res = await apiRequest.post("/auth/signup", {
-        email,
-        password,
-      });
+    const res = await signIn("credentials-signup", {
+      email,
+      password,
+      redirect: false,
+    });
 
-      if (res.status === 409) {
-        return toast.error("ایمیل قبلا ثبت شده است", errorStyle);
+    console.log(res);
+    // if (res.status === 409) {
+    //   return toast.error("ایمیل قبلا ثبت شده است", errorStyle);
+    // }
+    if (res?.ok) {
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
+      setTimeout(() => {
+        router.replace("/");
+        router.refresh();
+      }, 2000);
+      return toast.success("حساب کاربری با موفقیت ایجاد شد", successStyle);
+    } else {
+      if (res.error === "CredentialsSignin") {
+        return toast.error("ایمیل نامعتبر است");
       }
-      if (res.status === 201) {
-        setEmail("");
-        setPassword("");
-        setConfirmPassword("");
-        setTimeout(() => {
-          router.replace("/");
-          router.refresh();
-        }, 2000);
-        return toast.success("حساب کاربری با موفقیت ایجاد شد", successStyle);
-      }
-    } catch (error) {
-      console.log(error);
-      return toast.error("خطایی رخ داد لطفا دوباره امتحان کنید", errorStyle);
+      return toast.error("ایمیل قبلا استفاده شده است");
     }
   };
 

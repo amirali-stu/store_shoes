@@ -10,6 +10,7 @@ import { IoReload } from "react-icons/io5";
 import { IoMdSettings } from "react-icons/io";
 import { HiOutlineLogout } from "react-icons/hi";
 import { NavigationLoader } from "./NavigationLoader";
+import { signOut } from "next-auth/react";
 
 function Navigation() {
   const pathname = usePathname();
@@ -41,7 +42,11 @@ function Navigation() {
     },
     { href: "/shopping_cart", label: "سبد خرید", icon: BsBasket },
     { href: "/account/setting", label: "تنظیمات", icon: IoMdSettings },
-    { href: "/account/logout", label: "خروج", icon: HiOutlineLogout },
+    {
+      onClick: () => signOut({ callbackUrl: "/auth/login" }),
+      label: "خروج",
+      icon: HiOutlineLogout,
+    },
   ];
 
   return (
@@ -59,25 +64,38 @@ function Navigation() {
     0
 "
     >
-      <h2 className="text-gray-900 dark:text-gray-300 text-xl max-md:hidden p-4">دسترسی سریع</h2>
+      <h2 className="text-gray-900 dark:text-gray-300 text-xl max-md:hidden p-4">
+        دسترسی سریع
+      </h2>
       <ul className="flex max-md:w-full md:flex-col max-md:items-center max-md:justify-between max-md:px-4 gap-y-2">
         {items.map((item) => {
           const Icon = item.icon;
-          const isActive = pathname === item.href;
+          const isActive = item.href ? pathname === item.href : false;
 
           return (
-            <li key={item.href}>
-              <Link
-                href={item.href}
-                className={`transition-all duration-300 flex items-center ${
-                  isActive
-                    ? "md:relative md:text-gray-900 md:dark:text-gray-300 md:bg-green-200/20 md:dark:bg-slate-800 md:flex md:py-3 md:gap-x-2 md:text-lg md:pr-4 md:before:content-[''] md:before:absolute md:before:right-0 md:before:top-0 md:before:h-full md:before:w-1 md:before:bg-success md:before:rounded-md text-green-600 dark:text-gray-200"
-                    : "md:text-gray-600 md:dark:text-gray-400 md:flex md:py-3 md:gap-x-2 md:text-lg md:pr-4 md:hover:bg-green-100/20 md:dark:hover:bg-slate-500/20 text-gray-600 dark:text-gray-400" 
-                }`}
-              >
-                <Icon className="max-md:text-2xl" />
-                <p className="max-md:hidden">{item.label}</p>
-              </Link>
+            <li key={item.href ?? item.label}>
+              {item.onClick ? (
+                <button
+                  type="button"
+                  onClick={item.onClick}
+                  className="transition-all w-full duration-300 flex items-center md:py-3 md:gap-x-2 md:text-lg md:pr-4 cursor-pointer md:hover:bg-green-100/20 md:dark:hover:bg-slate-500/20 text-gray-600 dark:text-gray-400"
+                >
+                  <Icon className="max-md:text-2xl" />
+                  <p className="max-md:hidden">{item.label}</p>
+                </button>
+              ) : (
+                <Link
+                  href={item.href}
+                  className={`transition-all duration-300 flex items-center ${
+                    isActive
+                      ? "md:relative md:text-gray-900 md:dark:text-gray-300 md:bg-green-200/20 md:dark:bg-slate-800 md:flex md:py-3 md:gap-x-2 md:text-lg md:pr-4 md:before:content-[''] md:before:absolute md:before:right-0 md:before:top-0 md:before:h-full md:before:w-1 md:before:bg-success md:before:rounded-md text-green-600 dark:text-gray-200"
+                      : "md:text-gray-600 md:dark:text-gray-400 md:flex md:py-3 md:gap-x-2 md:text-lg md:pr-4 md:hover:bg-green-100/20 md:dark:hover:bg-slate-500/20 text-gray-600 dark:text-gray-400"
+                  }`}
+                >
+                  <Icon className="max-md:text-2xl" />
+                  <p className="max-md:hidden">{item.label}</p>
+                </Link>
+              )}
             </li>
           );
         })}

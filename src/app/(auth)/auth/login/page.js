@@ -7,7 +7,7 @@ import Link from "next/link";
 import { toast } from "react-toastify";
 import { errorStyle, successStyle } from "@/app/ToastStyles";
 import { useRouter } from "next/navigation";
-import { apiRequest } from "../../../../../services/axios/config/apiRequest";
+import { signIn } from "next-auth/react";
 
 function Login() {
   const router = useRouter();
@@ -25,31 +25,20 @@ function Login() {
       return toast.error("گذرواژه باید حداقل 8 کاراکتر باشد", errorStyle);
     }
 
-    try {
-      const res = await apiRequest.post("/auth/login", {
-        email,
-        password,
-      });
+    const res = await signIn("credentials-login", {
+      email,
+      password,
+      redirect: false,
+    });
 
-      if (res.status === 200) {
-        setEmail("");
-        setPassword("");
-        setTimeout(() => {
-          router.replace("/");
-          router.refresh();
-        }, 2000);
-        toast.success("ورود با موفقیت انجام شد", successStyle);
-        revalidatePath;
-      }
-    } catch (error) {
-      if (error.response.data.code === "USER_NOT_FOUND") {
-        return toast.error("کاربری با این اطلاعات یافت نشد", errorStyle);
-      } else if (error.response.data.code === "WRONG_PASSWORD") {
-        return toast.error("اطلاعات وارد شده اشتباه است", errorStyle);
-      } else {
-        console.log(error.response.data.code);
-        return toast.error("خطایی رخ داد لطفا دوباره امتحان کنید", errorStyle);
-      }
+    console.log(res);
+
+    if (res?.ok) {
+      toast.success("ورود با موفقیت انجام شد", successStyle);
+      router.replace("/");
+      router.refresh();
+    } else {
+      toast.error("ایمیل یا رمز عبور اشتباه است", errorStyle);
     }
   };
 

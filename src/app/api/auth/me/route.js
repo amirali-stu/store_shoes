@@ -1,40 +1,35 @@
-import { cookies } from "next/headers";
-import { verifyToken } from "../../../../../utils/auth";
+import { getServerSession } from "next-auth";
+import { authOptions } from "../[...nextauth]/route";
 import connectToDb from "../../../../../database/db";
 import UserModel from "../../../../../schema/user/user";
 
 export async function GET() {
   try {
-    await connectToDb();
-    const cookieStore = await cookies();
-    const tokenCookie = cookieStore.get("token");
-    const token = tokenCookie?.value;
-    let findUserByEmailValue = null;
+    const session = await getServerSession(authOptions);
 
-    if (!token) {
+    if (!session?.user?.email) {
       return Response.json(
-        { code: "USER_IS_NOT_REGISTER", message: "کاربر ثبت نام نکرده است" },
+        { code: "UNAUTHORIZED", message: "User is not authenticated" },
         { status: 401 }
       );
-    } else {
-      const isTrustToken = verifyToken(token);
-      if (!isTrustToken) {
-        return Response.json(
-          { code: "TOKEN_HAS_EXPIRED.", message: "توکن نامعتبر یا منقض است" },
-          { status: 401 }
-        );
-      }
-      findUserByEmailValue = isTrustToken.email;
     }
 
+    await connectToDb();
+
     const user = await UserModel.findOne(
-      { email: findUserByEmailValue },
-      { _id: 0, __v: 0, password: 0 }
+      { email: session.user.email, isActive: true },
+      { __v: 0, password: 0 }
     );
+
+    if (!user) {
+      return Response.json(
+        { code: "USER_NOT_FOUND", message: "User not found" },
+        { status: 404 }
+      );
+    }
 
     return Response.json({ message: "success", data: user }, { status: 200 });
   } catch (error) {
-    console.log(error);
     return Response.json(
       { message: "Internal Server Error 500" },
       { status: 500 }
