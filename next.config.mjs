@@ -2,6 +2,11 @@
 const nextConfig = {
   /* config options here */
   reactCompiler: true,
+  experimental: {
+    serverActions: {
+      bodySizeLimit: "10mb", // یا "5mb" / "20mb"
+    },
+  },
 };
 
 export default nextConfig;

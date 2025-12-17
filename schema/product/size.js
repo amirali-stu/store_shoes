@@ -8,4 +8,5 @@ const sizeSchema = new Schema(
   { timestamps: true }
 );
 
-export default mongoose.models.Size || mongoose.model("Size", sizeSchema);
+export const sizeModel =
+  mongoose.models.Size || mongoose.model("Size", sizeSchema);

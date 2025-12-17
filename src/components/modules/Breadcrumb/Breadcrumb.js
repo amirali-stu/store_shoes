@@ -33,18 +33,7 @@ function Breadcrumb() {
 
   return (
     <section className="w-full">
-      <div
-        className="
-          relative overflow-hidden
-          font-sans-medium
-          rounded-b-3xl
-          border
-          border-zinc-200/60 dark:border-white/10
-          bg-white/[0.65] dark:bg-zinc-950/[0.55]
-          backdrop-blur-2xl
-          shadow-[0_10px_35px_-18px_rgba(0,0,0,0.35)]
-        "
-      >
+      <div className="relative overflow-hidden font-sans-medium rounded-b-3xl border border-zinc-200/60 dark:border-white/10 bg-white/[0.65] dark:bg-zinc-950/[0.55] backdrop-blur-2xl shadow-[0_10px_35px_-18px_rgba(0,0,0,0.35)]">
         {/* Top neon rail */}
         <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-fuchsia-500 via-cyan-400 to-emerald-400 opacity-90" />
 
@@ -63,8 +52,7 @@ function Breadcrumb() {
               <li>
                 <Link
                   href="/"
-                  className="
-                    group inline-flex items-center
+                  className="group inline-flex items-center
                     rounded-full
                     px-3.5 py-1
                     text-sm font-medium
@@ -78,8 +66,7 @@ function Breadcrumb() {
                   "
                 >
                   <span
-                    className="
-                      grid place-items-center
+                    className="grid place-items-center
                       h-8 w-8 rounded-full
                      text-zinc-800
                       dark:bg-transparent dark:text-gray-300
@@ -104,8 +91,7 @@ function Breadcrumb() {
                     {!isLast ? (
                       <Link
                         href={item.href}
-                        className="
-                          group relative inline-flex items-center
+                        className="group relative inline-flex items-center
                           rounded-full
                           px-3.5 py-2
                           text-sm font-medium
@@ -123,8 +109,7 @@ function Breadcrumb() {
                       </Link>
                     ) : (
                       <span
-                        className="
-                          relative inline-flex items-center
+                        className="relative inline-flex items-center
                           rounded-full
                           px-4 py-2
                           text-sm
