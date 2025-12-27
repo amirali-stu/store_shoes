@@ -1,6 +1,7 @@
 import BrandForm from "@/components/templates/Form/Brand/BrandForm";
 import CategoryForm from "@/components/templates/Form/Category/CategoryForm";
 import ColorForm from "@/components/templates/Form/Color/ColorForm";
+import ProductsForm from "@/components/templates/Form/ProductsForm/ProductsForm";
 import SizeForm from "@/components/templates/Form/Size/SizeForm";
 
 function page() {
@@ -24,6 +25,10 @@ function page() {
       <div>
         <h3>ساختن سایز</h3>
         <SizeForm />
+      </div>
+      <div>
+        <h3>ساخت محصول جدید</h3>
+        <ProductsForm />
       </div>
     </section>
   );

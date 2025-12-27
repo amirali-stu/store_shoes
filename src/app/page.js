@@ -4,13 +4,88 @@ import packageBox from "../svgs/package.svg";
 import shoppingBag from "../svgs/shopping-bag.svg";
 import Image from "next/image";
 import ProductBox from "@/components/modules/Products/ProductBox";
-import ProductRow from "@/components/modules/Products/ProductRow";
+// import ProductRow from "@/components/modules/Products/ProductRow";
 import { IoArrowForward } from "react-icons/io5";
 import Box from "@/components/templates/Category/Box";
-import Banner from "@/components/templates/Slider/Banner";
+// import Banner from "@/components/templates/Slider/Banner";
 import Comment from "@/components/templates/Slider/Comment";
 import Article from "@/components/modules/Blog/Article";
 import Hero from "@/components/modules/Header/Hero";
+// import productImage from "@/./public/images/products/Image.png";
+import productImage from "../../public/images/products/Image.png";
+
+const staticProducts = [
+  {
+    id: crypto.randomUUID(),
+    title: "محصول تستی",
+    price: 1_200_000,
+    image: productImage,
+    slug: "/test",
+  },
+  {
+    id: crypto.randomUUID(),
+    title: "محصول تستی",
+    price: 1_200_000,
+    image: productImage,
+    slug: "/test",
+  },
+  {
+    id: crypto.randomUUID(),
+    title: "محصول تستی",
+    price: 1_200_000,
+    image: productImage,
+    slug: "/test",
+  },
+  {
+    id: crypto.randomUUID(),
+    title: "محصول تستی",
+    price: 1_200_000,
+    image: productImage,
+    slug: "/test",
+  },
+  {
+    id: crypto.randomUUID(),
+    title: "محصول تستی",
+    price: 1_200_000,
+    image: productImage,
+    slug: "/test",
+  },
+  {
+    id: crypto.randomUUID(),
+    title: "محصول تستی",
+    price: 1_200_000,
+    image: productImage,
+    slug: "/test",
+  },
+  {
+    id: crypto.randomUUID(),
+    title: "محصول تستی",
+    price: 1_200_000,
+    image: productImage,
+    slug: "/test",
+  },
+  {
+    id: crypto.randomUUID(),
+    title: "محصول تستی",
+    price: 1_200_000,
+    image: productImage,
+    slug: "/test",
+  },
+  {
+    id: crypto.randomUUID(),
+    title: "محصول تستی",
+    price: 1_200_000,
+    image: productImage,
+    slug: "/test",
+  },
+  {
+    id: crypto.randomUUID(),
+    title: "محصول تستی",
+    price: 1_200_000,
+    image: productImage,
+    slug: "/test",
+  },
+];
 
 export default function Home() {
   return (
@@ -99,12 +174,9 @@ export default function Home() {
           </h2>
 
           <div className="grid justify-center xl:grid-cols-6 lg:grid-cols-5 sm:grid-cols-3 grid-cols-2 w-full md:justify-center mt-4 gap-3">
-            <ProductBox />
-            <ProductBox />
-            <ProductBox />
-            <ProductBox />
-            <ProductBox />
-            <ProductBox />
+            {staticProducts.map((item) => (
+              <ProductBox key={item.id} {...item} />
+            ))}
           </div>
 
           {/* <div className="flex items-center xl:gap-x-6 lg:gap-x-2 max-lg:gap-x-4 mt-10 max-sm:flex-col lg:justify-center ">

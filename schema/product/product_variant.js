@@ -1,5 +1,4 @@
-import { Schema } from "mongoose";
-import ProductModel from "./product";
+import mongoose, { Schema } from "mongoose";
 
 const productVariantSchema = new Schema(
   {
@@ -9,14 +8,13 @@ const productVariantSchema = new Schema(
       required: true,
       index: true,
     },
-    sku: { type: String, required: true, unique: true, index: true },
-
-    colorId: {
+    productColorId: {
       type: Schema.Types.ObjectId,
-      ref: "Color",
+      ref: "ProductColor",
       required: true,
       index: true,
     },
+
     sizeId: {
       type: Schema.Types.ObjectId,
       ref: "Size",
@@ -24,21 +22,18 @@ const productVariantSchema = new Schema(
       index: true,
     },
 
-    price: { type: Number, required: true, min: 0 },
-    stock: { type: Number, required: true, min: 0 },
-
+    sku: { type: String, required: true, unique: true, index: true },
+    stock: { type: Number, required: true, min: 0, default: 0 },
     isActive: { type: Boolean, default: true, index: true },
   },
   { timestamps: true }
 );
 
 productVariantSchema.index(
-  { productId: 1, colorId: 1, sizeId: 1 },
+  { productId: 1, productColorId: 1, sizeId: 1 },
   { unique: true }
 );
 
-const ProductVariantModel =
+export const productVariantModel =
   mongoose.models.ProductVariant ||
   mongoose.model("ProductVariant", productVariantSchema);
-
-export default ProductVariantModel;

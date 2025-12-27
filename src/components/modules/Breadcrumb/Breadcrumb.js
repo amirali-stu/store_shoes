@@ -52,25 +52,11 @@ function Breadcrumb() {
               <li>
                 <Link
                   href="/"
-                  className="group inline-flex items-center
-                    rounded-full
-                    px-3.5 py-1
-                    text-sm font-medium
-                    border
-                    border-zinc-200/70 dark:border-white/10
-                    bg-white/70 dark:bg-white/5
-                    text-zinc-800 dark:text-zinc-200
-                    hover:bg-zinc-50 dark:hover:bg-white/10
-                    transition
-                    active:scale-[0.98]
+                  className="group inline-flex items-center rounded-full px-3.5 py-1 text-sm font-medium border border-zinc-200/70 dark:border-white/10 bg-white/70 dark:bg-white/5 text-zinc-800 dark:text-zinc-200 hover:bg-zinc-50 dark:hover:bg-white/10 transition active:scale-[0.98]
                   "
                 >
                   <span
-                    className="grid place-items-center
-                      h-8 w-8 rounded-full
-                     text-zinc-800
-                      dark:bg-transparent dark:text-gray-300
-                      group-hover:scale-105 transition
+                    className="grid place-items-center h-8 w-8 rounded-full text-zinc-800 dark:bg-transparent dark:text-gray-300 group-hover:scale-105 transition
                     "
                   >
                     <IoHomeOutline size={18} />
@@ -91,32 +77,14 @@ function Breadcrumb() {
                     {!isLast ? (
                       <Link
                         href={item.href}
-                        className="group relative inline-flex items-center
-                          rounded-full
-                          px-3.5 py-2
-                          text-sm font-medium
-                          border
-                          border-zinc-200/70 dark:border-white/10
-                          bg-white/50 dark:bg-white/5
-                          text-zinc-700 dark:text-zinc-200
-                          hover:text-zinc-950 dark:hover:text-white
-                          hover:bg-white/80 dark:hover:bg-white/10
-                          transition
-                          active:scale-[0.98]
+                        className="group relative inline-flex items-center rounded-full px-3.5 py-2 text-sm font-medium border border-zinc-200/70 dark:border-white/10 bg-white/50 dark:bg-white/5 text-zinc-700 dark:text-zinc-200 hover:text-zinc-950 dark:hover:text-white hover:bg-white/80 dark:hover:bg-white/10 transition active:scale-[0.98]
                         "
                       >
                         {item.label}
                       </Link>
                     ) : (
                       <span
-                        className="relative inline-flex items-center
-                          rounded-full
-                          px-4 py-2
-                          text-sm
-                          bg-white dark:bg-transparent
-                          text-zinc-800 dark:text-gray-300
-                          shadow-[0_10px_30px_-18px_rgba(34,211,238,0.7)]
-                          ring-1 ring-black/5 dark:ring-white/10
+                        className="relative inline-flex items-center rounded-full px-4 py-2 text-sm bg-white dark:bg-transparent text-zinc-800 dark:text-gray-300 shadow-[0_10px_30px_-18px_rgba(34,211,238,0.7)] ring-1 ring-black/5 dark:ring-white/10
                         "
                         aria-current="page"
                       >

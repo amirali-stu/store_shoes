@@ -10,14 +10,14 @@ import Link from "next/link";
 import { toast } from "react-toastify";
 import { errorStyle, successStyle } from "@/app/ToastStyles";
 
-function ProductBox() {
+function ProductBox({ id, title, price, image, slug }) {
   const addToLocalStorage = () => {
     const productDetails = {
-      id: crypto.randomUUID(),
-      title: "ذرت",
+      id,
+      title,
       count: 1,
-      price: 14.99,
-      img: "/images/products/Image.png",
+      price,
+      img: image,
     };
 
     const existingBasket = JSON.parse(localStorage.getItem("basket") || "[]");
@@ -48,19 +48,23 @@ function ProductBox() {
     <div className="md:max-w-[220px] max-md:w-full flex items-center flex-col border-2 border-gray-100 dark:border-slate-700 rounded-lg group transition-all duration-400 hover:shadow-[0_0_10px_-2px_#999999] dark:hover:shadow-[0px_0px_10px] dark:hover:shadow-slate-700/60 hover:border-gray-400/70 dark:hover:border-slate-600 lg:hover:-translate-y-1 relative overflow-hidden font-sans-medium">
       <div className="relative h-full w-full m-0 p-0">
         <Image
-          src="/images/banner.png"
+          src={image || "/images/placeholder-image/product.png"}
           alt="Product image"
           className="w-full h-full xl:h-[200px] lg:h-[200px] md:h-full"
           width={200}
           height={200}
+          placeholder="blur"
+          blurDataURL="/images/placeholder-image/product.png"
         />
       </div>
       <div className="w-full p-4 flex items-center font-sans-medium justify-between">
         <div>
           <h4 className="text-gray-700 dark:text-white text-xl font-sans-regular">
-            ذرت
+            {title}
           </h4>
-          <p className="text-gray-900 dark:text-white text-lg"> ت14.99</p>
+          <p className="text-gray-900 dark:text-white text-lg">
+            {Number(price).toLocaleString()}ت
+          </p>
           <div className="flex items-center text-yellow-600 dark:text-yellow-500">
             <FaStar />
             <FaStar />
@@ -89,7 +93,7 @@ function ProductBox() {
           <IoMdHeartEmpty size={28} />
         </div>
       </Link>
-      <Link href={"/product/1"}>
+      <Link href={`/product/${slug}`}>
         <div className="max-lg:hidden absolute bg-white dark:bg-slate-800 border-2 border-gray-50 dark:border-slate-700 flex items-center justify-center p-1 rounded-full w-9 h-9 top-15 right-70 transition-all duration-300 delay-100 group-hover:right-42 group-hover:z-10 -z-20 cursor-pointer">
           <MdOutlineRemoveRedEye size={28} />
         </div>

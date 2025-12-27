@@ -38,7 +38,6 @@ export default function BrandForm() {
   return (
     <form
       action={formAction}
-      encType="multipart/form-data"
       className="flex items-center flex-col gap-5"
     >
       <div className="flex items-center flex-col gap-2">

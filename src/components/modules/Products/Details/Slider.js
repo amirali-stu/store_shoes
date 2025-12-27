@@ -41,7 +41,7 @@ export default function ProductGallery({ images = [] }) {
           modules={[FreeMode, Thumbs]}
           className="h-[460px] !pt-7 !pb-6"
         >
-          {images.map((src, index) => (
+          {images.map((image, index) => (
             <SwiperSlide key={index}>
               <div
                 className={`rounded-lg overflow-hidden flex items-center justify-center cursor-pointer transition-all ${
@@ -51,7 +51,7 @@ export default function ProductGallery({ images = [] }) {
                 }`}
               >
                 <Image
-                  src={src}
+                  src={image.url}
                   alt=""
                   width={400}
                   height={400}
@@ -88,11 +88,11 @@ export default function ProductGallery({ images = [] }) {
           onSlideChange={(s) => setActiveIndex(s.realIndex)}
           className="w-full h-full"
         >
-          {images.map((src, index) => (
+          {images.map((image, index) => (
             <SwiperSlide key={index} className="w-full h-full">
               <div className="w-full h-full object-cover mix-blend-multiply dark:mix-blend-normal">
                 <Image
-                  src={src}
+                  src={image.url}
                   alt={`عکس ${index + 1}`}
                   width={800}
                   height={800}
@@ -116,7 +116,7 @@ export default function ProductGallery({ images = [] }) {
           modules={[FreeMode, Thumbs, Navigation]}
           className="!py-2 !px-2"
         >
-          {images.map((src, index) => (
+          {images.map((image, index) => (
             <SwiperSlide key={index} className="!h-[80px]">
               <div
                 className={`rounded-lg overflow-hidden flex items-center justify-center cursor-pointer transition-all ${
@@ -126,7 +126,7 @@ export default function ProductGallery({ images = [] }) {
                 }`}
               >
                 <Image
-                  src={src}
+                  src={image.url}
                   alt=""
                   width={300}
                   height={300}

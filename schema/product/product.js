@@ -17,6 +17,12 @@ const productSchema = new Schema(
 
     brandId: { type: Schema.Types.ObjectId, ref: "Brand", index: true },
     categoryId: { type: Schema.Types.ObjectId, ref: "Category", index: true },
+    price: { type: Number, required: true, min: 0 },
+
+    sizeRange: {
+      from: { type: Number, required: true },
+      to: { type: Number, required: true },
+    },
 
     images: [
       {
@@ -31,7 +37,5 @@ const productSchema = new Schema(
   { timestamps: true }
 );
 
-const ProductModel =
+export const productModel =
   mongoose.models.Product || mongoose.model("Product", productSchema);
-
-export default ProductModel;
