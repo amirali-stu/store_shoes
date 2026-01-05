@@ -1,7 +1,9 @@
-import React from "react";
+import getWishlist from "@/lib/wishlist/getWishlist";
 import Row from "./Row";
 
-function Table() {
+export default async function Table() {
+  const wishlists = await getWishlist();
+
   return (
     <div className="overflow-x-auto border-2 border-gray-100 rounded-lg">
       <table className="min-w-full overflow-hidden">
@@ -29,13 +31,11 @@ function Table() {
         </thead>
 
         <tbody className="bg-white divide-y-2 divide-gray-100">
-          <Row />
-          <Row />
-          <Row />
+          {wishlists.data?.map((item) => (
+            <Row key={item._id} {...item.product} />
+          ))}
         </tbody>
       </table>
     </div>
   );
 }
-
-export default Table;

@@ -3,26 +3,23 @@ import { BsBasket } from "react-icons/bs";
 import React from "react";
 import Image from "next/image";
 
-function Row() {
+function Row({ _id, title, image, price }) {
   return (
     <tr className="hover:bg-gray-100/20 relative transition-all duration-300">
       <td className="md:px-10 max-md:px-5 py-1 max-lg:py-8 flex items-center gap-x-2 text-sm text-gray-600 whitespace-nowrap">
         <Image
-          src="/images/products/image.png"
+          src={image}
           className="lg:block hidden"
           width={100}
           height={100}
           alt="wishlist-list"
         />
-        <p className="text-base text-gray-900">کتونی نایکی</p>
+        <p className="text-base text-gray-900">{title}</p>
       </td>
 
       <td className="md:px-10 max-md:px-2 max-sm:px-4 py-1 text-sm text-gray-600 whitespace-nowrap">
         <p className="text-xl max-sm:text-lg font-bold text-gray-900">
-          $17,00
-          <span className="line-through text-sm max-sm:text-xs text-gray-400 ml-2 max-sm:ml-1 font-normal">
-            $48,00
-          </span>
+          {Number(price).toLocaleString("fa-IR")}
         </p>
       </td>
 

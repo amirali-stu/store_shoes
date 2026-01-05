@@ -18,7 +18,7 @@ function Login() {
   const loginForm = async (e) => {
     e.preventDefault();
 
-    if (email.length < 13) {
+    if (email.length < 12) {
       return toast.error("ایمیل  نامعتبر است", errorStyle);
     }
     if (password.length < 8) {

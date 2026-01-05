@@ -6,6 +6,7 @@ export async function getProducts() {
 
   const products = await productModel
     .find({ isActive: true })
+    .sort({ createdAt: -1 })
     .select("title slug description images brandId categoryId price")
     .populate("brandId", "name slug")
     .populate("categoryId", "name slug")
