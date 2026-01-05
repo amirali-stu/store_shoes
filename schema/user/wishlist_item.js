@@ -1,5 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 import UserModel from "./user";
+import { productModel } from "../product/product";
 
 const wishlistItemSchema = new Schema(
   {

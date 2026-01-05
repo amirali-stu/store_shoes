@@ -36,7 +36,10 @@ export const authOptions = {
 
         if (!user) return null;
 
-        const ok = confirmPasswordHashed(credentials.password, user.password);
+        const ok = await confirmPasswordHashed(
+          credentials.password,
+          user.password
+        );
         if (!ok) return null;
 
         return { id: user._id.toString(), email: user.email, role: user.role };
@@ -84,8 +87,10 @@ export const authOptions = {
       return token;
     },
     async session({ session, token }) {
-      session.user.id = token.id;
-      session.user.role = token.role;
+      if (session.user) {
+        session.user.id = token.id;
+        session.user.role = token.role;
+      }
       return session;
     },
   },

@@ -1,4 +1,8 @@
 import mongoose, { Schema } from "mongoose";
+import { sizeModel } from "./size";
+import { productModel } from "./product";
+import { productColorModel } from "./product_color";
+
 
 const productVariantSchema = new Schema(
   {

@@ -8,6 +8,7 @@ import ShowColors from "./ShowColors";
 import ShowSizes from "./ShowSizes";
 import { toast } from "react-toastify";
 import { errorStyle, successStyle } from "@/app/ToastStyles";
+import AddProductToWishlist from "../AddProductToWishlist";
 
 let userProduct = {
   productId: "",
@@ -220,7 +221,10 @@ export default function Detail({
                 افزودن به سبد خرید
               </button>
 
-              <button className="p-4 rounded-full bg-success-dark/20 dark:hover:bg-success/50 text-success-dark hover:bg-success hover:text-white transition-all duration-300 cursor-pointer">
+              <button
+                onClick={() => AddProductToWishlist({ id })}
+                className="p-4 rounded-full bg-success-dark/20 dark:hover:bg-success/50 text-success-dark hover:bg-success hover:text-white transition-all duration-300 cursor-pointer"
+              >
                 <FaRegHeart className="w-6 h-6" />
               </button>
             </div>

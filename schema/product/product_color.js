@@ -1,4 +1,6 @@
 import mongoose, { Schema } from "mongoose";
+import { productModel } from "./product";
+import { colorModel } from "./color";
 
 const productColorSchema = new Schema(
   {

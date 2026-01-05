@@ -1,49 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaStar } from "react-icons/fa";
 import { BsBasket } from "react-icons/bs";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { IoMdHeartEmpty } from "react-icons/io";
 import Link from "next/link";
-import { toast } from "react-toastify";
-import { errorStyle, successStyle } from "@/app/ToastStyles";
+import AddProductToLocalStorage from "./AddProductToLocalStorage";
+import AddProductToWishlist from "./AddProductToWishlist";
 
-function ProductBox({ id, title, price, image, slug }) {
-  const addToLocalStorage = () => {
-    const productDetails = {
-      id,
-      title,
-      count: 1,
-      price,
-      img: image,
-    };
-
-    const existingBasket = JSON.parse(localStorage.getItem("basket") || "[]");
-
-    const isAlreadyInBasket = existingBasket.some(
-      (item) => item.id === productDetails.id
-    );
-
-    if (isAlreadyInBasket) {
-      return toast.error("محصول در سبد خرید شما وجود دارد", errorStyle);
-    }
-
-    const updatedBasket = [...existingBasket, productDetails];
-    localStorage.setItem("basket", JSON.stringify(updatedBasket));
-
-    // آپدیت در dom
-    window.dispatchEvent(new Event("basketUpdated"));
-    toast.success("محصول با موفقیت اضافه شد", successStyle);
-
-    // فرستادن کاربر به اول صفحه
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
+export default function ProductBox({ id, title, price, image, slug }) {
   return (
     <div className="md:max-w-[220px] max-md:w-full flex items-center flex-col border-2 border-gray-100 dark:border-slate-700 rounded-lg group transition-all duration-400 hover:shadow-[0_0_10px_-2px_#999999] dark:hover:shadow-[0px_0px_10px] dark:hover:shadow-slate-700/60 hover:border-gray-400/70 dark:hover:border-slate-600 lg:hover:-translate-y-1 relative overflow-hidden font-sans-medium">
       <div className="relative h-full w-full m-0 p-0">
@@ -75,7 +42,7 @@ function ProductBox({ id, title, price, image, slug }) {
         </div>
         <div
           className="bg-gray-50 dark:bg-slate-800 dark:text-gray-100 transition-all duration-400 group-hover:text-white group-hover:bg-success dark:group-hover:bg-slate-700 flex items-center justify-center rounded-full p-2 cursor-pointer"
-          onClick={addToLocalStorage}
+          onClick={() => AddProductToLocalStorage({ id, image, price, title })}
         >
           <BsBasket size={22} />
         </div>
@@ -88,11 +55,14 @@ function ProductBox({ id, title, price, image, slug }) {
         50% <span className="font-medium">تخفیف</span>
       </div>
       {/* hidden box */}
-      <Link href={"/wishlist"}>
-        <div className="max-lg:hidden absolute bg-white dark:bg-slate-800 border-2 border-gray-50 dark:border-slate-700 flex items-center justify-center p-1 rounded-full w-9 h-9 top-5 right-70 transition-all duration-300 group-hover:right-42 group-hover:z-10 -z-20 cursor-pointer">
-          <IoMdHeartEmpty size={28} />
-        </div>
-      </Link>
+
+      <div
+        onClick={() => AddProductToWishlist({ id })}
+        className="max-lg:hidden absolute bg-white dark:bg-slate-800 border-2 border-gray-50 dark:border-slate-700 flex items-center justify-center p-1 rounded-full w-9 h-9 top-5 right-70 transition-all duration-300 group-hover:right-42 group-hover:z-10 -z-20 cursor-pointer"
+      >
+        <IoMdHeartEmpty size={28} />
+      </div>
+
       <Link href={`/product/${slug}`}>
         <div className="max-lg:hidden absolute bg-white dark:bg-slate-800 border-2 border-gray-50 dark:border-slate-700 flex items-center justify-center p-1 rounded-full w-9 h-9 top-15 right-70 transition-all duration-300 delay-100 group-hover:right-42 group-hover:z-10 -z-20 cursor-pointer">
           <MdOutlineRemoveRedEye size={28} />
@@ -101,5 +71,3 @@ function ProductBox({ id, title, price, image, slug }) {
     </div>
   );
 }
-
-export default ProductBox;
